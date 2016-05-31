@@ -85,11 +85,12 @@ public class DeviceNovintFalcon : MonoBehaviour {
     
     Vector3 initialPos = Vector3.zero;
     Vector3 origContactPoint = Vector3.zero;
+    Vector3 origContactObjectPoint = Vector3.zero;
     Vector3 contactNormal = Vector3.zero;
    
     //for each texture
     float stiffness = 50.0f;
-    float surfaceStrength = 35.0f;
+    float surfaceStrength = 50.0f;
 
     //marker to see where force is being guided towards
     public GameObject guideObject;
@@ -128,8 +129,8 @@ public class DeviceNovintFalcon : MonoBehaviour {
 		// キャラクター動作制御
 		//_charaMove();
 
-		gameObject.transform.position = moveSpeedConst*(new Vector3((float)GetXPos(), (float)GetYPos(), (float)GetZPos()));
-
+		gameObject.transform.position = (new Vector3((float)GetXPos(), (float)GetYPos(), -(float)GetZPos()));
+        //Debug.Log("Position just set to " + gameObject.transform.position.ToString("G4"));
 		//Debug.Log(isButton0Down() + " , " + isButton1Down() + " , " + isButton2Down() + " , " + isButton3Down());
 	}
 
@@ -140,7 +141,8 @@ public class DeviceNovintFalcon : MonoBehaviour {
         {
             contactNormal = c.contacts[0].normal;
             Debug.Log("OnCollisionEnter entered, normal is " + contactNormal.ToString());
-            origContactPoint = gameObject.transform.position;
+            origContactObjectPoint = gameObject.transform.position;
+            origContactPoint = c.contacts[0].point;
         }
     }
 
@@ -166,26 +168,32 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
     private void OnCollisionStay(Collision c)
     {
-        
+       // Debug.Log("Within OnCollision, gameObject.position is " + gameObject.transform.position.ToString("G4"));
         if(c.collider.tag == "Surface")
         {
-            Vector3 vecToOriginal = c.contacts[0].point - origContactPoint;
-            Debug.DrawLine(c.contacts[0].point, origContactPoint,Color.black);
+            Vector3 vecToOriginal = c.contacts[0].point - origContactObjectPoint;
+            //Debug.DrawLine(c.contacts[0].point, origContactPoint,Color.black);
 
             float ang = Mathf.Deg2Rad * Vector3.Angle(vecToOriginal, contactNormal);
             float scalarProj = vecToOriginal.magnitude * Mathf.Cos(ang);
-            Vector3 vectorProj = scalarProj * (contactNormal / contactNormal.magnitude);
+            Debug.Log("normal magnitude" + contactNormal.magnitude);
+            Vector3 vectorProj = scalarProj * (contactNormal);
 
-            Debug.DrawLine(c.contacts[0].point, c.contacts[0].point+vectorProj, Color.red);
+            Debug.DrawLine(c.contacts[0].point, c.contacts[0].point-vectorProj, Color.red);
             Vector3 normalOutsidePos = c.contacts[0].point - vectorProj;
-            Debug.Log("Oncollisionstay detected, strength is " + Strength + ", difference between object and goal is " + (normalOutsidePos -gameObject.transform.position).ToString());
-            Debug.Log("goalPos is " + normalOutsidePos.ToString() + ", and object pos is " + gameObject.transform.position.ToString());
+            //Debug.Log("Oncollisionstay detected, strength is " + Strength + ", difference between object and goal is " + (normalOutsidePos - gameObject.transform.position).ToString("G4"));
+            //Debug.Log("goalPos is " + normalOutsidePos.ToString("G4") + ", and object pos is " + gameObject.transform.position.ToString("G4"));
             guideObject.transform.position = normalOutsidePos;
 
             PosX = normalOutsidePos.x;
             PosY = normalOutsidePos.y;
             PosZ = normalOutsidePos.z;
             Strength = surfaceStrength;
+            float scale = vectorProj.sqrMagnitude;
+            Debug.Log("Amount of Strength is " + vectorProj.magnitude);
+            //SpeedX = -stiffness*vectorProj.x;
+            //SpeedY = -stiffness*vectorProj.y;
+            //SpeedZ = -stiffness*vectorProj.z;
         }
         
         //SetServo(new double[3] { forceVector.x, forceVector.y, forceVector.z });
@@ -211,9 +219,10 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
 	private void _feedback() {
 		// NovintFalconのグリップをデフォ位置に戻す
-		//SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
-		SetServoPos(new double[3] { PosX, PosY, PosZ }, Strength);
-        //SetServoPos(new double[3] { 0, 0, 0 }, Strength);
+		//SetServo(new double[3] { SpeedX, SpeedY, -SpeedZ });
+        //Debug.Log("Position being fed to setservopos as " + PosX + ", " + PosY + ", " + PosZ);		
+        SetServoPos(new double[3] { PosX, PosY, -PosZ }, Strength);
+        //SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
 		//Debug.Log(GetServoPos());
 	}
 
