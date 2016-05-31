@@ -23,7 +23,7 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
 	#region FalconWrapper.dll Variables
   
-	const string falcon = "Falcon Wrapper.dll";
+	const string falcon = "Falcon Wrapper";
 
 	[DllImport(falcon)]
 	private static extern void StartHaptics();
