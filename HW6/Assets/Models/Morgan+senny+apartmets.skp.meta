@@ -1,0 +1,1492 @@
+fileFormatVersion: 2
+guid: a1b5b401a32189f4ca3111d89144c1b6
+timeCreated: 1464577894
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000e7000000e8000000e9000000ea000000eb000000ec000000ed000000ee000000ef000000f0000000f1000000f2000000f3000000f4000000f5000000f6000000f7000000f8000000f9000000fa000000fb000000fc000000fd000000fe000000ff000000000100000101000002010000030100000401000005010000060100000701000008010000090100000a0100000b0100000c0100000d0100000e0100000f010000100100001101000012010000130100001401000015010000160100001701000018010000190100001a0100001b0100001c0100001d0100001e0100001f010000200100002101000022010000230100002401000025010000260100002701000028010000290100002a0100002b0100002c0100002d0100002e0100002f010000300100003101000032010000330100003401000035010000360100003701000038010000390100003a0100003b0100003c0100003d0100003e0100003f010000400100004101000042010000430100004401000045010000460100004701000048010000490100004a0100004b0100004c0100004d0100004e0100004f010000500100005101000052010000530100005401000055010000560100005701000058010000590100005a0100005b0100005c0100005d0100005e0100005f010000600100006101000062010000630100006401000065010000660100006701000068010000690100006a0100006b0100006c0100006d0100006e0100006f010000700100007101000072010000730100007401000075010000760100007701000078010000790100007a0100007b0100007c0100007d0100007e0100007f010000800100008101000082010000830100008401000085010000860100008701000088010000890100008a0100008b0100008c0100008d0100008e0100008f010000900100009101000092010000930100009401000095010000960100009701000098010000990100009a0100009b0100009c0100009d0100009e0100009f010000a0010000a1010000a2010000a3010000a4010000a5010000a6010000a7010000a8010000a9010000aa010000ab010000ac010000ad010000ae010000af010000b0010000b1010000b2010000b3010000b4010000b5010000b6010000b7010000b8010000b9010000ba010000bb010000bc010000bd010000be010000bf010000c0010000c1010000c2010000c3010000c4010000c5010000c6010000c7010000c8010000c9010000ca010000cb010000cc010000cd010000ce010000cf010000d0010000d1010000d2010000d3010000d4010000d5010000d6010000d7010000d8010000d9010000da010000db010000dc010000dd010000de010000df010000e0010000e1010000e2010000e3010000e4010000e5010000e6010000e7010000e8010000e9010000ea010000eb010000ec010000ed010000ee010000ef010000f0010000f1010000f2010000f3010000f4010000f5010000f6010000f7010000f8010000f9010000fa010000fb010000fc010000fd010000fe010000ff010000000200000102000002020000030200000402000005020000060200000702000008020000090200000a0200000b0200000c0200000d0200000e0200000f020000100200001102000012020000130200001402000015020000160200001702000018020000190200001a0200001b0200001c0200001d0200001e0200001f020000200200002102000022020000230200002402000025020000260200002702000028020000290200002a0200002b0200002c0200002d0200002e0200002f020000300200003102000032020000330200003402000035020000360200003702000038020000390200003a0200003b0200003c0200003d0200003e0200003f020000400200004102000042020000430200004402000045020000460200004702000048020000490200004a0200004b0200004c0200004d0200004e0200004f020000500200005102000052020000530200005402000055020000560200005702000058020000590200005a0200005b0200005c0200005d0200005e0200005f020000600200006102000062020000630200006402000065020000660200006702000068020000690200006a0200006b0200006c0200006d0200006e0200006f020000700200007102000072020000730200007402000075020000760200007702000078020000790200007a0200007b0200007c0200007d0200007e0200007f020000800200008102000082020000830200008402000085020000860200008702000088020000890200008a0200008b0200008c0200008d0200008e0200008f020000900200009102000092020000930200009402000095020000960200009702000098020000990200009a0200009b0200009c0200009d0200009e0200009f020000a0020000a1020000a2020000a3020000a4020000a5020000a6020000a7020000a8020000a9020000aa020000ab020000ac020000ad020000
+  assetHash:
+    serializedVersion: 2
+    Hash: 9dc34205f873725ad8d45d887b677e1a
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 80.93345, y: 56.651352, z: -33.888798}
+      lookAt: {x: -23.495821, y: 8.598198, z: 36.03976}
+      up: {x: -0.2967451, y: 0.93405426, z: 0.19870825}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 2D_Animal_Dog_Lucy
+    100002: 2D_Man_Backpack
+    100004: 2D_Man_BaseballCap
+    100006: 2D_Man_Business
+    100008: 2D_Man_Skateboard
+    100010: 2D_Man_Suit
+    100012: 2D_Man_Suit 1
+    100014: 2D_Man_Suit 2
+    100016: 2D_Man_Walking_Toward
+    100018: 2D_Woman+Child
+    100020: 2D_Woman+Child 1
+    100022: 2D_Woman_Nalgene Bottle
+    100024: 2D_Woman_Sweater
+    100026: 2D_Woman_Walking Away
+    100028: Bryce#1
+    100030: C I T Y  T O W E#1
+    100032: CITY TOWERS
+    100034: Component#1
+    100036: Component#1 1
+    100038: Component#1 10
+    100040: Component#1 11
+    100042: Component#1 12
+    100044: Component#1 13
+    100046: Component#1 14
+    100048: Component#1 15
+    100050: Component#1 16
+    100052: Component#1 17
+    100054: Component#1 18
+    100056: Component#1 19
+    100058: Component#1 2
+    100060: Component#1 20
+    100062: Component#1 21
+    100064: Component#1 22
+    100066: Component#1 23
+    100068: Component#1 24
+    100070: Component#1 25
+    100072: Component#1 26
+    100074: Component#1 27
+    100076: Component#1 28
+    100078: Component#1 29
+    100080: Component#1 3
+    100082: Component#1 30
+    100084: Component#1 31
+    100086: Component#1 32
+    100088: Component#1 33
+    100090: Component#1 34
+    100092: Component#1 35
+    100094: Component#1 36
+    100096: Component#1 37
+    100098: Component#1 38
+    100100: Component#1 39
+    100102: Component#1 4
+    100104: Component#1 40
+    100106: Component#1 41
+    100108: Component#1 42
+    100110: Component#1 43
+    100112: Component#1 44
+    100114: Component#1 45
+    100116: Component#1 46
+    100118: Component#1 47
+    100120: Component#1 5
+    100122: Component#1 6
+    100124: Component#1 7
+    100126: Component#1 8
+    100128: Component#1 9
+    100130: Door_Glass Double_Sidelights
+    100132: Door_Glass Double_Sidelights 1
+    100134: Door_Glass Double_Sidelights#1
+    100136: Door_Glass Double_Sidelights#1 1
+    100138: Door_Glass Double_Sidelights#1 2
+    100140: Door_Glass Double_Sidelights#1 3
+    100142: Door_Glass Double_Sidelights#1 4
+    100144: Door_Glass Double_Sidelights#1 5
+    100146: Door_Glass_Double_Sidelights
+    100148: Door_Glass_Double_Sidelights 1
+    100150: Door_Glass_Double_Sidelights 10
+    100152: Door_Glass_Double_Sidelights 100
+    100154: Door_Glass_Double_Sidelights 101
+    100156: Door_Glass_Double_Sidelights 102
+    100158: Door_Glass_Double_Sidelights 103
+    100160: Door_Glass_Double_Sidelights 104
+    100162: Door_Glass_Double_Sidelights 105
+    100164: Door_Glass_Double_Sidelights 106
+    100166: Door_Glass_Double_Sidelights 107
+    100168: Door_Glass_Double_Sidelights 108
+    100170: Door_Glass_Double_Sidelights 109
+    100172: Door_Glass_Double_Sidelights 11
+    100174: Door_Glass_Double_Sidelights 110
+    100176: Door_Glass_Double_Sidelights 111
+    100178: Door_Glass_Double_Sidelights 112
+    100180: Door_Glass_Double_Sidelights 113
+    100182: Door_Glass_Double_Sidelights 114
+    100184: Door_Glass_Double_Sidelights 115
+    100186: Door_Glass_Double_Sidelights 116
+    100188: Door_Glass_Double_Sidelights 117
+    100190: Door_Glass_Double_Sidelights 118
+    100192: Door_Glass_Double_Sidelights 119
+    100194: Door_Glass_Double_Sidelights 12
+    100196: Door_Glass_Double_Sidelights 120
+    100198: Door_Glass_Double_Sidelights 121
+    100200: Door_Glass_Double_Sidelights 122
+    100202: Door_Glass_Double_Sidelights 123
+    100204: Door_Glass_Double_Sidelights 124
+    100206: Door_Glass_Double_Sidelights 125
+    100208: Door_Glass_Double_Sidelights 126
+    100210: Door_Glass_Double_Sidelights 127
+    100212: Door_Glass_Double_Sidelights 128
+    100214: Door_Glass_Double_Sidelights 129
+    100216: Door_Glass_Double_Sidelights 13
+    100218: Door_Glass_Double_Sidelights 130
+    100220: Door_Glass_Double_Sidelights 131
+    100222: Door_Glass_Double_Sidelights 132
+    100224: Door_Glass_Double_Sidelights 133
+    100226: Door_Glass_Double_Sidelights 134
+    100228: Door_Glass_Double_Sidelights 135
+    100230: Door_Glass_Double_Sidelights 136
+    100232: Door_Glass_Double_Sidelights 137
+    100234: Door_Glass_Double_Sidelights 138
+    100236: Door_Glass_Double_Sidelights 139
+    100238: Door_Glass_Double_Sidelights 14
+    100240: Door_Glass_Double_Sidelights 140
+    100242: Door_Glass_Double_Sidelights 141
+    100244: Door_Glass_Double_Sidelights 142
+    100246: Door_Glass_Double_Sidelights 143
+    100248: Door_Glass_Double_Sidelights 144
+    100250: Door_Glass_Double_Sidelights 145
+    100252: Door_Glass_Double_Sidelights 146
+    100254: Door_Glass_Double_Sidelights 147
+    100256: Door_Glass_Double_Sidelights 148
+    100258: Door_Glass_Double_Sidelights 149
+    100260: Door_Glass_Double_Sidelights 15
+    100262: Door_Glass_Double_Sidelights 150
+    100264: Door_Glass_Double_Sidelights 151
+    100266: Door_Glass_Double_Sidelights 152
+    100268: Door_Glass_Double_Sidelights 153
+    100270: Door_Glass_Double_Sidelights 154
+    100272: Door_Glass_Double_Sidelights 155
+    100274: Door_Glass_Double_Sidelights 156
+    100276: Door_Glass_Double_Sidelights 157
+    100278: Door_Glass_Double_Sidelights 158
+    100280: Door_Glass_Double_Sidelights 159
+    100282: Door_Glass_Double_Sidelights 16
+    100284: Door_Glass_Double_Sidelights 160
+    100286: Door_Glass_Double_Sidelights 161
+    100288: Door_Glass_Double_Sidelights 162
+    100290: Door_Glass_Double_Sidelights 163
+    100292: Door_Glass_Double_Sidelights 164
+    100294: Door_Glass_Double_Sidelights 165
+    100296: Door_Glass_Double_Sidelights 166
+    100298: Door_Glass_Double_Sidelights 167
+    100300: Door_Glass_Double_Sidelights 168
+    100302: Door_Glass_Double_Sidelights 169
+    100304: Door_Glass_Double_Sidelights 17
+    100306: Door_Glass_Double_Sidelights 170
+    100308: Door_Glass_Double_Sidelights 171
+    100310: Door_Glass_Double_Sidelights 172
+    100312: Door_Glass_Double_Sidelights 173
+    100314: Door_Glass_Double_Sidelights 174
+    100316: Door_Glass_Double_Sidelights 175
+    100318: Door_Glass_Double_Sidelights 176
+    100320: Door_Glass_Double_Sidelights 177
+    100322: Door_Glass_Double_Sidelights 178
+    100324: Door_Glass_Double_Sidelights 179
+    100326: Door_Glass_Double_Sidelights 18
+    100328: Door_Glass_Double_Sidelights 180
+    100330: Door_Glass_Double_Sidelights 181
+    100332: Door_Glass_Double_Sidelights 182
+    100334: Door_Glass_Double_Sidelights 183
+    100336: Door_Glass_Double_Sidelights 184
+    100338: Door_Glass_Double_Sidelights 185
+    100340: Door_Glass_Double_Sidelights 186
+    100342: Door_Glass_Double_Sidelights 187
+    100344: Door_Glass_Double_Sidelights 188
+    100346: Door_Glass_Double_Sidelights 189
+    100348: Door_Glass_Double_Sidelights 19
+    100350: Door_Glass_Double_Sidelights 190
+    100352: Door_Glass_Double_Sidelights 191
+    100354: Door_Glass_Double_Sidelights 192
+    100356: Door_Glass_Double_Sidelights 193
+    100358: Door_Glass_Double_Sidelights 194
+    100360: Door_Glass_Double_Sidelights 195
+    100362: Door_Glass_Double_Sidelights 196
+    100364: Door_Glass_Double_Sidelights 197
+    100366: Door_Glass_Double_Sidelights 198
+    100368: Door_Glass_Double_Sidelights 199
+    100370: Door_Glass_Double_Sidelights 2
+    100372: Door_Glass_Double_Sidelights 20
+    100374: Door_Glass_Double_Sidelights 200
+    100376: Door_Glass_Double_Sidelights 201
+    100378: Door_Glass_Double_Sidelights 202
+    100380: Door_Glass_Double_Sidelights 203
+    100382: Door_Glass_Double_Sidelights 204
+    100384: Door_Glass_Double_Sidelights 205
+    100386: Door_Glass_Double_Sidelights 206
+    100388: Door_Glass_Double_Sidelights 207
+    100390: Door_Glass_Double_Sidelights 208
+    100392: Door_Glass_Double_Sidelights 209
+    100394: Door_Glass_Double_Sidelights 21
+    100396: Door_Glass_Double_Sidelights 210
+    100398: Door_Glass_Double_Sidelights 211
+    100400: Door_Glass_Double_Sidelights 212
+    100402: Door_Glass_Double_Sidelights 213
+    100404: Door_Glass_Double_Sidelights 214
+    100406: Door_Glass_Double_Sidelights 215
+    100408: Door_Glass_Double_Sidelights 216
+    100410: Door_Glass_Double_Sidelights 217
+    100412: Door_Glass_Double_Sidelights 218
+    100414: Door_Glass_Double_Sidelights 219
+    100416: Door_Glass_Double_Sidelights 22
+    100418: Door_Glass_Double_Sidelights 220
+    100420: Door_Glass_Double_Sidelights 221
+    100422: Door_Glass_Double_Sidelights 222
+    100424: Door_Glass_Double_Sidelights 223
+    100426: Door_Glass_Double_Sidelights 224
+    100428: Door_Glass_Double_Sidelights 225
+    100430: Door_Glass_Double_Sidelights 226
+    100432: Door_Glass_Double_Sidelights 227
+    100434: Door_Glass_Double_Sidelights 228
+    100436: Door_Glass_Double_Sidelights 229
+    100438: Door_Glass_Double_Sidelights 23
+    100440: Door_Glass_Double_Sidelights 24
+    100442: Door_Glass_Double_Sidelights 25
+    100444: Door_Glass_Double_Sidelights 26
+    100446: Door_Glass_Double_Sidelights 27
+    100448: Door_Glass_Double_Sidelights 28
+    100450: Door_Glass_Double_Sidelights 29
+    100452: Door_Glass_Double_Sidelights 3
+    100454: Door_Glass_Double_Sidelights 30
+    100456: Door_Glass_Double_Sidelights 31
+    100458: Door_Glass_Double_Sidelights 32
+    100460: Door_Glass_Double_Sidelights 33
+    100462: Door_Glass_Double_Sidelights 34
+    100464: Door_Glass_Double_Sidelights 35
+    100466: Door_Glass_Double_Sidelights 36
+    100468: Door_Glass_Double_Sidelights 37
+    100470: Door_Glass_Double_Sidelights 38
+    100472: Door_Glass_Double_Sidelights 39
+    100474: Door_Glass_Double_Sidelights 4
+    100476: Door_Glass_Double_Sidelights 40
+    100478: Door_Glass_Double_Sidelights 41
+    100480: Door_Glass_Double_Sidelights 42
+    100482: Door_Glass_Double_Sidelights 43
+    100484: Door_Glass_Double_Sidelights 44
+    100486: Door_Glass_Double_Sidelights 45
+    100488: Door_Glass_Double_Sidelights 46
+    100490: Door_Glass_Double_Sidelights 47
+    100492: Door_Glass_Double_Sidelights 48
+    100494: Door_Glass_Double_Sidelights 49
+    100496: Door_Glass_Double_Sidelights 5
+    100498: Door_Glass_Double_Sidelights 50
+    100500: Door_Glass_Double_Sidelights 51
+    100502: Door_Glass_Double_Sidelights 52
+    100504: Door_Glass_Double_Sidelights 53
+    100506: Door_Glass_Double_Sidelights 54
+    100508: Door_Glass_Double_Sidelights 55
+    100510: Door_Glass_Double_Sidelights 56
+    100512: Door_Glass_Double_Sidelights 57
+    100514: Door_Glass_Double_Sidelights 58
+    100516: Door_Glass_Double_Sidelights 59
+    100518: Door_Glass_Double_Sidelights 6
+    100520: Door_Glass_Double_Sidelights 60
+    100522: Door_Glass_Double_Sidelights 61
+    100524: Door_Glass_Double_Sidelights 62
+    100526: Door_Glass_Double_Sidelights 63
+    100528: Door_Glass_Double_Sidelights 64
+    100530: Door_Glass_Double_Sidelights 65
+    100532: Door_Glass_Double_Sidelights 66
+    100534: Door_Glass_Double_Sidelights 67
+    100536: Door_Glass_Double_Sidelights 68
+    100538: Door_Glass_Double_Sidelights 69
+    100540: Door_Glass_Double_Sidelights 7
+    100542: Door_Glass_Double_Sidelights 70
+    100544: Door_Glass_Double_Sidelights 71
+    100546: Door_Glass_Double_Sidelights 72
+    100548: Door_Glass_Double_Sidelights 73
+    100550: Door_Glass_Double_Sidelights 74
+    100552: Door_Glass_Double_Sidelights 75
+    100554: Door_Glass_Double_Sidelights 76
+    100556: Door_Glass_Double_Sidelights 77
+    100558: Door_Glass_Double_Sidelights 78
+    100560: Door_Glass_Double_Sidelights 79
+    100562: Door_Glass_Double_Sidelights 8
+    100564: Door_Glass_Double_Sidelights 80
+    100566: Door_Glass_Double_Sidelights 81
+    100568: Door_Glass_Double_Sidelights 82
+    100570: Door_Glass_Double_Sidelights 83
+    100572: Door_Glass_Double_Sidelights 84
+    100574: Door_Glass_Double_Sidelights 85
+    100576: Door_Glass_Double_Sidelights 86
+    100578: Door_Glass_Double_Sidelights 87
+    100580: Door_Glass_Double_Sidelights 88
+    100582: Door_Glass_Double_Sidelights 89
+    100584: Door_Glass_Double_Sidelights 9
+    100586: Door_Glass_Double_Sidelights 90
+    100588: Door_Glass_Double_Sidelights 91
+    100590: Door_Glass_Double_Sidelights 92
+    100592: Door_Glass_Double_Sidelights 93
+    100594: Door_Glass_Double_Sidelights 94
+    100596: Door_Glass_Double_Sidelights 95
+    100598: Door_Glass_Double_Sidelights 96
+    100600: Door_Glass_Double_Sidelights 97
+    100602: Door_Glass_Double_Sidelights 98
+    100604: Door_Glass_Double_Sidelights 99
+    100606: Group 187
+    100608: Group 189
+    100610: Group 191
+    100612: Group 231
+    100614: Group 233
+    100616: Group 235
+    100618: Group 263
+    100620: Group 265
+    100622: Group 267
+    100624: Group 657
+    100626: Image 2
+    100628: M
+    100630: Morgan Senny Lux
+    100632: //RootNode
+    100634: Window_Casement_Wood_Triple_81.5x36
+    100636: Window_Casement_Wood_Triple_81.5x36 1
+    100638: Window_Casement_Wood_Triple_81.5x36 2
+    100640: Window_Doublehung_23x58
+    100642: Window_Doublehung_23x58 1
+    100644: Window_Doublehung_23x58 10
+    100646: Window_Doublehung_23x58 11
+    100648: Window_Doublehung_23x58 12
+    100650: Window_Doublehung_23x58 13
+    100652: Window_Doublehung_23x58 14
+    100654: Window_Doublehung_23x58 15
+    100656: Window_Doublehung_23x58 16
+    100658: Window_Doublehung_23x58 17
+    100660: Window_Doublehung_23x58 18
+    100662: Window_Doublehung_23x58 19
+    100664: Window_Doublehung_23x58 2
+    100666: Window_Doublehung_23x58 20
+    100668: Window_Doublehung_23x58 21
+    100670: Window_Doublehung_23x58 22
+    100672: Window_Doublehung_23x58 23
+    100674: Window_Doublehung_23x58 3
+    100676: Window_Doublehung_23x58 4
+    100678: Window_Doublehung_23x58 5
+    100680: Window_Doublehung_23x58 6
+    100682: Window_Doublehung_23x58 7
+    100684: Window_Doublehung_23x58 8
+    100686: Window_Doublehung_23x58 9
+    400000: 2D_Animal_Dog_Lucy
+    400002: 2D_Man_Backpack
+    400004: 2D_Man_BaseballCap
+    400006: 2D_Man_Business
+    400008: 2D_Man_Skateboard
+    400010: 2D_Man_Suit
+    400012: 2D_Man_Suit 1
+    400014: 2D_Man_Suit 2
+    400016: 2D_Man_Walking_Toward
+    400018: 2D_Woman+Child
+    400020: 2D_Woman+Child 1
+    400022: 2D_Woman_Nalgene Bottle
+    400024: 2D_Woman_Sweater
+    400026: 2D_Woman_Walking Away
+    400028: Bryce#1
+    400030: C I T Y  T O W E#1
+    400032: CITY TOWERS
+    400034: Component#1
+    400036: Component#1 1
+    400038: Component#1 10
+    400040: Component#1 11
+    400042: Component#1 12
+    400044: Component#1 13
+    400046: Component#1 14
+    400048: Component#1 15
+    400050: Component#1 16
+    400052: Component#1 17
+    400054: Component#1 18
+    400056: Component#1 19
+    400058: Component#1 2
+    400060: Component#1 20
+    400062: Component#1 21
+    400064: Component#1 22
+    400066: Component#1 23
+    400068: Component#1 24
+    400070: Component#1 25
+    400072: Component#1 26
+    400074: Component#1 27
+    400076: Component#1 28
+    400078: Component#1 29
+    400080: Component#1 3
+    400082: Component#1 30
+    400084: Component#1 31
+    400086: Component#1 32
+    400088: Component#1 33
+    400090: Component#1 34
+    400092: Component#1 35
+    400094: Component#1 36
+    400096: Component#1 37
+    400098: Component#1 38
+    400100: Component#1 39
+    400102: Component#1 4
+    400104: Component#1 40
+    400106: Component#1 41
+    400108: Component#1 42
+    400110: Component#1 43
+    400112: Component#1 44
+    400114: Component#1 45
+    400116: Component#1 46
+    400118: Component#1 47
+    400120: Component#1 5
+    400122: Component#1 6
+    400124: Component#1 7
+    400126: Component#1 8
+    400128: Component#1 9
+    400130: Door_Glass Double_Sidelights
+    400132: Door_Glass Double_Sidelights 1
+    400134: Door_Glass Double_Sidelights#1
+    400136: Door_Glass Double_Sidelights#1 1
+    400138: Door_Glass Double_Sidelights#1 2
+    400140: Door_Glass Double_Sidelights#1 3
+    400142: Door_Glass Double_Sidelights#1 4
+    400144: Door_Glass Double_Sidelights#1 5
+    400146: Door_Glass_Double_Sidelights
+    400148: Door_Glass_Double_Sidelights 1
+    400150: Door_Glass_Double_Sidelights 10
+    400152: Door_Glass_Double_Sidelights 100
+    400154: Door_Glass_Double_Sidelights 101
+    400156: Door_Glass_Double_Sidelights 102
+    400158: Door_Glass_Double_Sidelights 103
+    400160: Door_Glass_Double_Sidelights 104
+    400162: Door_Glass_Double_Sidelights 105
+    400164: Door_Glass_Double_Sidelights 106
+    400166: Door_Glass_Double_Sidelights 107
+    400168: Door_Glass_Double_Sidelights 108
+    400170: Door_Glass_Double_Sidelights 109
+    400172: Door_Glass_Double_Sidelights 11
+    400174: Door_Glass_Double_Sidelights 110
+    400176: Door_Glass_Double_Sidelights 111
+    400178: Door_Glass_Double_Sidelights 112
+    400180: Door_Glass_Double_Sidelights 113
+    400182: Door_Glass_Double_Sidelights 114
+    400184: Door_Glass_Double_Sidelights 115
+    400186: Door_Glass_Double_Sidelights 116
+    400188: Door_Glass_Double_Sidelights 117
+    400190: Door_Glass_Double_Sidelights 118
+    400192: Door_Glass_Double_Sidelights 119
+    400194: Door_Glass_Double_Sidelights 12
+    400196: Door_Glass_Double_Sidelights 120
+    400198: Door_Glass_Double_Sidelights 121
+    400200: Door_Glass_Double_Sidelights 122
+    400202: Door_Glass_Double_Sidelights 123
+    400204: Door_Glass_Double_Sidelights 124
+    400206: Door_Glass_Double_Sidelights 125
+    400208: Door_Glass_Double_Sidelights 126
+    400210: Door_Glass_Double_Sidelights 127
+    400212: Door_Glass_Double_Sidelights 128
+    400214: Door_Glass_Double_Sidelights 129
+    400216: Door_Glass_Double_Sidelights 13
+    400218: Door_Glass_Double_Sidelights 130
+    400220: Door_Glass_Double_Sidelights 131
+    400222: Door_Glass_Double_Sidelights 132
+    400224: Door_Glass_Double_Sidelights 133
+    400226: Door_Glass_Double_Sidelights 134
+    400228: Door_Glass_Double_Sidelights 135
+    400230: Door_Glass_Double_Sidelights 136
+    400232: Door_Glass_Double_Sidelights 137
+    400234: Door_Glass_Double_Sidelights 138
+    400236: Door_Glass_Double_Sidelights 139
+    400238: Door_Glass_Double_Sidelights 14
+    400240: Door_Glass_Double_Sidelights 140
+    400242: Door_Glass_Double_Sidelights 141
+    400244: Door_Glass_Double_Sidelights 142
+    400246: Door_Glass_Double_Sidelights 143
+    400248: Door_Glass_Double_Sidelights 144
+    400250: Door_Glass_Double_Sidelights 145
+    400252: Door_Glass_Double_Sidelights 146
+    400254: Door_Glass_Double_Sidelights 147
+    400256: Door_Glass_Double_Sidelights 148
+    400258: Door_Glass_Double_Sidelights 149
+    400260: Door_Glass_Double_Sidelights 15
+    400262: Door_Glass_Double_Sidelights 150
+    400264: Door_Glass_Double_Sidelights 151
+    400266: Door_Glass_Double_Sidelights 152
+    400268: Door_Glass_Double_Sidelights 153
+    400270: Door_Glass_Double_Sidelights 154
+    400272: Door_Glass_Double_Sidelights 155
+    400274: Door_Glass_Double_Sidelights 156
+    400276: Door_Glass_Double_Sidelights 157
+    400278: Door_Glass_Double_Sidelights 158
+    400280: Door_Glass_Double_Sidelights 159
+    400282: Door_Glass_Double_Sidelights 16
+    400284: Door_Glass_Double_Sidelights 160
+    400286: Door_Glass_Double_Sidelights 161
+    400288: Door_Glass_Double_Sidelights 162
+    400290: Door_Glass_Double_Sidelights 163
+    400292: Door_Glass_Double_Sidelights 164
+    400294: Door_Glass_Double_Sidelights 165
+    400296: Door_Glass_Double_Sidelights 166
+    400298: Door_Glass_Double_Sidelights 167
+    400300: Door_Glass_Double_Sidelights 168
+    400302: Door_Glass_Double_Sidelights 169
+    400304: Door_Glass_Double_Sidelights 17
+    400306: Door_Glass_Double_Sidelights 170
+    400308: Door_Glass_Double_Sidelights 171
+    400310: Door_Glass_Double_Sidelights 172
+    400312: Door_Glass_Double_Sidelights 173
+    400314: Door_Glass_Double_Sidelights 174
+    400316: Door_Glass_Double_Sidelights 175
+    400318: Door_Glass_Double_Sidelights 176
+    400320: Door_Glass_Double_Sidelights 177
+    400322: Door_Glass_Double_Sidelights 178
+    400324: Door_Glass_Double_Sidelights 179
+    400326: Door_Glass_Double_Sidelights 18
+    400328: Door_Glass_Double_Sidelights 180
+    400330: Door_Glass_Double_Sidelights 181
+    400332: Door_Glass_Double_Sidelights 182
+    400334: Door_Glass_Double_Sidelights 183
+    400336: Door_Glass_Double_Sidelights 184
+    400338: Door_Glass_Double_Sidelights 185
+    400340: Door_Glass_Double_Sidelights 186
+    400342: Door_Glass_Double_Sidelights 187
+    400344: Door_Glass_Double_Sidelights 188
+    400346: Door_Glass_Double_Sidelights 189
+    400348: Door_Glass_Double_Sidelights 19
+    400350: Door_Glass_Double_Sidelights 190
+    400352: Door_Glass_Double_Sidelights 191
+    400354: Door_Glass_Double_Sidelights 192
+    400356: Door_Glass_Double_Sidelights 193
+    400358: Door_Glass_Double_Sidelights 194
+    400360: Door_Glass_Double_Sidelights 195
+    400362: Door_Glass_Double_Sidelights 196
+    400364: Door_Glass_Double_Sidelights 197
+    400366: Door_Glass_Double_Sidelights 198
+    400368: Door_Glass_Double_Sidelights 199
+    400370: Door_Glass_Double_Sidelights 2
+    400372: Door_Glass_Double_Sidelights 20
+    400374: Door_Glass_Double_Sidelights 200
+    400376: Door_Glass_Double_Sidelights 201
+    400378: Door_Glass_Double_Sidelights 202
+    400380: Door_Glass_Double_Sidelights 203
+    400382: Door_Glass_Double_Sidelights 204
+    400384: Door_Glass_Double_Sidelights 205
+    400386: Door_Glass_Double_Sidelights 206
+    400388: Door_Glass_Double_Sidelights 207
+    400390: Door_Glass_Double_Sidelights 208
+    400392: Door_Glass_Double_Sidelights 209
+    400394: Door_Glass_Double_Sidelights 21
+    400396: Door_Glass_Double_Sidelights 210
+    400398: Door_Glass_Double_Sidelights 211
+    400400: Door_Glass_Double_Sidelights 212
+    400402: Door_Glass_Double_Sidelights 213
+    400404: Door_Glass_Double_Sidelights 214
+    400406: Door_Glass_Double_Sidelights 215
+    400408: Door_Glass_Double_Sidelights 216
+    400410: Door_Glass_Double_Sidelights 217
+    400412: Door_Glass_Double_Sidelights 218
+    400414: Door_Glass_Double_Sidelights 219
+    400416: Door_Glass_Double_Sidelights 22
+    400418: Door_Glass_Double_Sidelights 220
+    400420: Door_Glass_Double_Sidelights 221
+    400422: Door_Glass_Double_Sidelights 222
+    400424: Door_Glass_Double_Sidelights 223
+    400426: Door_Glass_Double_Sidelights 224
+    400428: Door_Glass_Double_Sidelights 225
+    400430: Door_Glass_Double_Sidelights 226
+    400432: Door_Glass_Double_Sidelights 227
+    400434: Door_Glass_Double_Sidelights 228
+    400436: Door_Glass_Double_Sidelights 229
+    400438: Door_Glass_Double_Sidelights 23
+    400440: Door_Glass_Double_Sidelights 24
+    400442: Door_Glass_Double_Sidelights 25
+    400444: Door_Glass_Double_Sidelights 26
+    400446: Door_Glass_Double_Sidelights 27
+    400448: Door_Glass_Double_Sidelights 28
+    400450: Door_Glass_Double_Sidelights 29
+    400452: Door_Glass_Double_Sidelights 3
+    400454: Door_Glass_Double_Sidelights 30
+    400456: Door_Glass_Double_Sidelights 31
+    400458: Door_Glass_Double_Sidelights 32
+    400460: Door_Glass_Double_Sidelights 33
+    400462: Door_Glass_Double_Sidelights 34
+    400464: Door_Glass_Double_Sidelights 35
+    400466: Door_Glass_Double_Sidelights 36
+    400468: Door_Glass_Double_Sidelights 37
+    400470: Door_Glass_Double_Sidelights 38
+    400472: Door_Glass_Double_Sidelights 39
+    400474: Door_Glass_Double_Sidelights 4
+    400476: Door_Glass_Double_Sidelights 40
+    400478: Door_Glass_Double_Sidelights 41
+    400480: Door_Glass_Double_Sidelights 42
+    400482: Door_Glass_Double_Sidelights 43
+    400484: Door_Glass_Double_Sidelights 44
+    400486: Door_Glass_Double_Sidelights 45
+    400488: Door_Glass_Double_Sidelights 46
+    400490: Door_Glass_Double_Sidelights 47
+    400492: Door_Glass_Double_Sidelights 48
+    400494: Door_Glass_Double_Sidelights 49
+    400496: Door_Glass_Double_Sidelights 5
+    400498: Door_Glass_Double_Sidelights 50
+    400500: Door_Glass_Double_Sidelights 51
+    400502: Door_Glass_Double_Sidelights 52
+    400504: Door_Glass_Double_Sidelights 53
+    400506: Door_Glass_Double_Sidelights 54
+    400508: Door_Glass_Double_Sidelights 55
+    400510: Door_Glass_Double_Sidelights 56
+    400512: Door_Glass_Double_Sidelights 57
+    400514: Door_Glass_Double_Sidelights 58
+    400516: Door_Glass_Double_Sidelights 59
+    400518: Door_Glass_Double_Sidelights 6
+    400520: Door_Glass_Double_Sidelights 60
+    400522: Door_Glass_Double_Sidelights 61
+    400524: Door_Glass_Double_Sidelights 62
+    400526: Door_Glass_Double_Sidelights 63
+    400528: Door_Glass_Double_Sidelights 64
+    400530: Door_Glass_Double_Sidelights 65
+    400532: Door_Glass_Double_Sidelights 66
+    400534: Door_Glass_Double_Sidelights 67
+    400536: Door_Glass_Double_Sidelights 68
+    400538: Door_Glass_Double_Sidelights 69
+    400540: Door_Glass_Double_Sidelights 7
+    400542: Door_Glass_Double_Sidelights 70
+    400544: Door_Glass_Double_Sidelights 71
+    400546: Door_Glass_Double_Sidelights 72
+    400548: Door_Glass_Double_Sidelights 73
+    400550: Door_Glass_Double_Sidelights 74
+    400552: Door_Glass_Double_Sidelights 75
+    400554: Door_Glass_Double_Sidelights 76
+    400556: Door_Glass_Double_Sidelights 77
+    400558: Door_Glass_Double_Sidelights 78
+    400560: Door_Glass_Double_Sidelights 79
+    400562: Door_Glass_Double_Sidelights 8
+    400564: Door_Glass_Double_Sidelights 80
+    400566: Door_Glass_Double_Sidelights 81
+    400568: Door_Glass_Double_Sidelights 82
+    400570: Door_Glass_Double_Sidelights 83
+    400572: Door_Glass_Double_Sidelights 84
+    400574: Door_Glass_Double_Sidelights 85
+    400576: Door_Glass_Double_Sidelights 86
+    400578: Door_Glass_Double_Sidelights 87
+    400580: Door_Glass_Double_Sidelights 88
+    400582: Door_Glass_Double_Sidelights 89
+    400584: Door_Glass_Double_Sidelights 9
+    400586: Door_Glass_Double_Sidelights 90
+    400588: Door_Glass_Double_Sidelights 91
+    400590: Door_Glass_Double_Sidelights 92
+    400592: Door_Glass_Double_Sidelights 93
+    400594: Door_Glass_Double_Sidelights 94
+    400596: Door_Glass_Double_Sidelights 95
+    400598: Door_Glass_Double_Sidelights 96
+    400600: Door_Glass_Double_Sidelights 97
+    400602: Door_Glass_Double_Sidelights 98
+    400604: Door_Glass_Double_Sidelights 99
+    400606: Group 187
+    400608: Group 189
+    400610: Group 191
+    400612: Group 231
+    400614: Group 233
+    400616: Group 235
+    400618: Group 263
+    400620: Group 265
+    400622: Group 267
+    400624: Group 657
+    400626: Image 2
+    400628: M
+    400630: Morgan Senny Lux
+    400632: //RootNode
+    400634: Window_Casement_Wood_Triple_81.5x36
+    400636: Window_Casement_Wood_Triple_81.5x36 1
+    400638: Window_Casement_Wood_Triple_81.5x36 2
+    400640: Window_Doublehung_23x58
+    400642: Window_Doublehung_23x58 1
+    400644: Window_Doublehung_23x58 10
+    400646: Window_Doublehung_23x58 11
+    400648: Window_Doublehung_23x58 12
+    400650: Window_Doublehung_23x58 13
+    400652: Window_Doublehung_23x58 14
+    400654: Window_Doublehung_23x58 15
+    400656: Window_Doublehung_23x58 16
+    400658: Window_Doublehung_23x58 17
+    400660: Window_Doublehung_23x58 18
+    400662: Window_Doublehung_23x58 19
+    400664: Window_Doublehung_23x58 2
+    400666: Window_Doublehung_23x58 20
+    400668: Window_Doublehung_23x58 21
+    400670: Window_Doublehung_23x58 22
+    400672: Window_Doublehung_23x58 23
+    400674: Window_Doublehung_23x58 3
+    400676: Window_Doublehung_23x58 4
+    400678: Window_Doublehung_23x58 5
+    400680: Window_Doublehung_23x58 6
+    400682: Window_Doublehung_23x58 7
+    400684: Window_Doublehung_23x58 8
+    400686: Window_Doublehung_23x58 9
+    2300000: 2D_Animal_Dog_Lucy
+    2300002: 2D_Man_Backpack
+    2300004: 2D_Man_BaseballCap
+    2300006: 2D_Man_Business
+    2300008: 2D_Man_Skateboard
+    2300010: 2D_Man_Suit
+    2300012: 2D_Man_Suit 1
+    2300014: 2D_Man_Suit 2
+    2300016: 2D_Man_Walking_Toward
+    2300018: 2D_Woman+Child
+    2300020: 2D_Woman+Child 1
+    2300022: 2D_Woman_Nalgene Bottle
+    2300024: 2D_Woman_Sweater
+    2300026: 2D_Woman_Walking Away
+    2300028: Bryce#1
+    2300030: C I T Y  T O W E#1
+    2300032: CITY TOWERS
+    2300034: Component#1
+    2300036: Component#1 1
+    2300038: Component#1 10
+    2300040: Component#1 11
+    2300042: Component#1 12
+    2300044: Component#1 13
+    2300046: Component#1 14
+    2300048: Component#1 15
+    2300050: Component#1 16
+    2300052: Component#1 17
+    2300054: Component#1 18
+    2300056: Component#1 19
+    2300058: Component#1 2
+    2300060: Component#1 20
+    2300062: Component#1 21
+    2300064: Component#1 22
+    2300066: Component#1 23
+    2300068: Component#1 24
+    2300070: Component#1 25
+    2300072: Component#1 26
+    2300074: Component#1 27
+    2300076: Component#1 28
+    2300078: Component#1 29
+    2300080: Component#1 3
+    2300082: Component#1 30
+    2300084: Component#1 31
+    2300086: Component#1 32
+    2300088: Component#1 33
+    2300090: Component#1 34
+    2300092: Component#1 35
+    2300094: Component#1 36
+    2300096: Component#1 37
+    2300098: Component#1 38
+    2300100: Component#1 39
+    2300102: Component#1 4
+    2300104: Component#1 40
+    2300106: Component#1 41
+    2300108: Component#1 42
+    2300110: Component#1 43
+    2300112: Component#1 44
+    2300114: Component#1 45
+    2300116: Component#1 46
+    2300118: Component#1 47
+    2300120: Component#1 5
+    2300122: Component#1 6
+    2300124: Component#1 7
+    2300126: Component#1 8
+    2300128: Component#1 9
+    2300130: Door_Glass Double_Sidelights
+    2300132: Door_Glass Double_Sidelights 1
+    2300134: Door_Glass Double_Sidelights#1
+    2300136: Door_Glass Double_Sidelights#1 1
+    2300138: Door_Glass Double_Sidelights#1 2
+    2300140: Door_Glass Double_Sidelights#1 3
+    2300142: Door_Glass Double_Sidelights#1 4
+    2300144: Door_Glass Double_Sidelights#1 5
+    2300146: Door_Glass_Double_Sidelights
+    2300148: Door_Glass_Double_Sidelights 1
+    2300150: Door_Glass_Double_Sidelights 10
+    2300152: Door_Glass_Double_Sidelights 100
+    2300154: Door_Glass_Double_Sidelights 101
+    2300156: Door_Glass_Double_Sidelights 102
+    2300158: Door_Glass_Double_Sidelights 103
+    2300160: Door_Glass_Double_Sidelights 104
+    2300162: Door_Glass_Double_Sidelights 105
+    2300164: Door_Glass_Double_Sidelights 106
+    2300166: Door_Glass_Double_Sidelights 107
+    2300168: Door_Glass_Double_Sidelights 108
+    2300170: Door_Glass_Double_Sidelights 109
+    2300172: Door_Glass_Double_Sidelights 11
+    2300174: Door_Glass_Double_Sidelights 110
+    2300176: Door_Glass_Double_Sidelights 111
+    2300178: Door_Glass_Double_Sidelights 112
+    2300180: Door_Glass_Double_Sidelights 113
+    2300182: Door_Glass_Double_Sidelights 114
+    2300184: Door_Glass_Double_Sidelights 115
+    2300186: Door_Glass_Double_Sidelights 116
+    2300188: Door_Glass_Double_Sidelights 117
+    2300190: Door_Glass_Double_Sidelights 118
+    2300192: Door_Glass_Double_Sidelights 119
+    2300194: Door_Glass_Double_Sidelights 12
+    2300196: Door_Glass_Double_Sidelights 120
+    2300198: Door_Glass_Double_Sidelights 121
+    2300200: Door_Glass_Double_Sidelights 122
+    2300202: Door_Glass_Double_Sidelights 123
+    2300204: Door_Glass_Double_Sidelights 124
+    2300206: Door_Glass_Double_Sidelights 125
+    2300208: Door_Glass_Double_Sidelights 126
+    2300210: Door_Glass_Double_Sidelights 127
+    2300212: Door_Glass_Double_Sidelights 128
+    2300214: Door_Glass_Double_Sidelights 129
+    2300216: Door_Glass_Double_Sidelights 13
+    2300218: Door_Glass_Double_Sidelights 130
+    2300220: Door_Glass_Double_Sidelights 131
+    2300222: Door_Glass_Double_Sidelights 132
+    2300224: Door_Glass_Double_Sidelights 133
+    2300226: Door_Glass_Double_Sidelights 134
+    2300228: Door_Glass_Double_Sidelights 135
+    2300230: Door_Glass_Double_Sidelights 136
+    2300232: Door_Glass_Double_Sidelights 137
+    2300234: Door_Glass_Double_Sidelights 138
+    2300236: Door_Glass_Double_Sidelights 139
+    2300238: Door_Glass_Double_Sidelights 14
+    2300240: Door_Glass_Double_Sidelights 140
+    2300242: Door_Glass_Double_Sidelights 141
+    2300244: Door_Glass_Double_Sidelights 142
+    2300246: Door_Glass_Double_Sidelights 143
+    2300248: Door_Glass_Double_Sidelights 144
+    2300250: Door_Glass_Double_Sidelights 145
+    2300252: Door_Glass_Double_Sidelights 146
+    2300254: Door_Glass_Double_Sidelights 147
+    2300256: Door_Glass_Double_Sidelights 148
+    2300258: Door_Glass_Double_Sidelights 149
+    2300260: Door_Glass_Double_Sidelights 15
+    2300262: Door_Glass_Double_Sidelights 150
+    2300264: Door_Glass_Double_Sidelights 151
+    2300266: Door_Glass_Double_Sidelights 152
+    2300268: Door_Glass_Double_Sidelights 153
+    2300270: Door_Glass_Double_Sidelights 154
+    2300272: Door_Glass_Double_Sidelights 155
+    2300274: Door_Glass_Double_Sidelights 156
+    2300276: Door_Glass_Double_Sidelights 157
+    2300278: Door_Glass_Double_Sidelights 158
+    2300280: Door_Glass_Double_Sidelights 159
+    2300282: Door_Glass_Double_Sidelights 16
+    2300284: Door_Glass_Double_Sidelights 160
+    2300286: Door_Glass_Double_Sidelights 161
+    2300288: Door_Glass_Double_Sidelights 162
+    2300290: Door_Glass_Double_Sidelights 163
+    2300292: Door_Glass_Double_Sidelights 164
+    2300294: Door_Glass_Double_Sidelights 165
+    2300296: Door_Glass_Double_Sidelights 166
+    2300298: Door_Glass_Double_Sidelights 167
+    2300300: Door_Glass_Double_Sidelights 168
+    2300302: Door_Glass_Double_Sidelights 169
+    2300304: Door_Glass_Double_Sidelights 17
+    2300306: Door_Glass_Double_Sidelights 170
+    2300308: Door_Glass_Double_Sidelights 171
+    2300310: Door_Glass_Double_Sidelights 172
+    2300312: Door_Glass_Double_Sidelights 173
+    2300314: Door_Glass_Double_Sidelights 174
+    2300316: Door_Glass_Double_Sidelights 175
+    2300318: Door_Glass_Double_Sidelights 176
+    2300320: Door_Glass_Double_Sidelights 177
+    2300322: Door_Glass_Double_Sidelights 178
+    2300324: Door_Glass_Double_Sidelights 179
+    2300326: Door_Glass_Double_Sidelights 18
+    2300328: Door_Glass_Double_Sidelights 180
+    2300330: Door_Glass_Double_Sidelights 181
+    2300332: Door_Glass_Double_Sidelights 182
+    2300334: Door_Glass_Double_Sidelights 183
+    2300336: Door_Glass_Double_Sidelights 184
+    2300338: Door_Glass_Double_Sidelights 185
+    2300340: Door_Glass_Double_Sidelights 186
+    2300342: Door_Glass_Double_Sidelights 187
+    2300344: Door_Glass_Double_Sidelights 188
+    2300346: Door_Glass_Double_Sidelights 189
+    2300348: Door_Glass_Double_Sidelights 19
+    2300350: Door_Glass_Double_Sidelights 190
+    2300352: Door_Glass_Double_Sidelights 191
+    2300354: Door_Glass_Double_Sidelights 192
+    2300356: Door_Glass_Double_Sidelights 193
+    2300358: Door_Glass_Double_Sidelights 194
+    2300360: Door_Glass_Double_Sidelights 195
+    2300362: Door_Glass_Double_Sidelights 196
+    2300364: Door_Glass_Double_Sidelights 197
+    2300366: Door_Glass_Double_Sidelights 198
+    2300368: Door_Glass_Double_Sidelights 199
+    2300370: Door_Glass_Double_Sidelights 2
+    2300372: Door_Glass_Double_Sidelights 20
+    2300374: Door_Glass_Double_Sidelights 200
+    2300376: Door_Glass_Double_Sidelights 201
+    2300378: Door_Glass_Double_Sidelights 202
+    2300380: Door_Glass_Double_Sidelights 203
+    2300382: Door_Glass_Double_Sidelights 204
+    2300384: Door_Glass_Double_Sidelights 205
+    2300386: Door_Glass_Double_Sidelights 206
+    2300388: Door_Glass_Double_Sidelights 207
+    2300390: Door_Glass_Double_Sidelights 208
+    2300392: Door_Glass_Double_Sidelights 209
+    2300394: Door_Glass_Double_Sidelights 21
+    2300396: Door_Glass_Double_Sidelights 210
+    2300398: Door_Glass_Double_Sidelights 211
+    2300400: Door_Glass_Double_Sidelights 212
+    2300402: Door_Glass_Double_Sidelights 213
+    2300404: Door_Glass_Double_Sidelights 214
+    2300406: Door_Glass_Double_Sidelights 215
+    2300408: Door_Glass_Double_Sidelights 216
+    2300410: Door_Glass_Double_Sidelights 217
+    2300412: Door_Glass_Double_Sidelights 218
+    2300414: Door_Glass_Double_Sidelights 219
+    2300416: Door_Glass_Double_Sidelights 22
+    2300418: Door_Glass_Double_Sidelights 220
+    2300420: Door_Glass_Double_Sidelights 221
+    2300422: Door_Glass_Double_Sidelights 222
+    2300424: Door_Glass_Double_Sidelights 223
+    2300426: Door_Glass_Double_Sidelights 224
+    2300428: Door_Glass_Double_Sidelights 225
+    2300430: Door_Glass_Double_Sidelights 226
+    2300432: Door_Glass_Double_Sidelights 227
+    2300434: Door_Glass_Double_Sidelights 228
+    2300436: Door_Glass_Double_Sidelights 229
+    2300438: Door_Glass_Double_Sidelights 23
+    2300440: Door_Glass_Double_Sidelights 24
+    2300442: Door_Glass_Double_Sidelights 25
+    2300444: Door_Glass_Double_Sidelights 26
+    2300446: Door_Glass_Double_Sidelights 27
+    2300448: Door_Glass_Double_Sidelights 28
+    2300450: Door_Glass_Double_Sidelights 29
+    2300452: Door_Glass_Double_Sidelights 3
+    2300454: Door_Glass_Double_Sidelights 30
+    2300456: Door_Glass_Double_Sidelights 31
+    2300458: Door_Glass_Double_Sidelights 32
+    2300460: Door_Glass_Double_Sidelights 33
+    2300462: Door_Glass_Double_Sidelights 34
+    2300464: Door_Glass_Double_Sidelights 35
+    2300466: Door_Glass_Double_Sidelights 36
+    2300468: Door_Glass_Double_Sidelights 37
+    2300470: Door_Glass_Double_Sidelights 38
+    2300472: Door_Glass_Double_Sidelights 39
+    2300474: Door_Glass_Double_Sidelights 4
+    2300476: Door_Glass_Double_Sidelights 40
+    2300478: Door_Glass_Double_Sidelights 41
+    2300480: Door_Glass_Double_Sidelights 42
+    2300482: Door_Glass_Double_Sidelights 43
+    2300484: Door_Glass_Double_Sidelights 44
+    2300486: Door_Glass_Double_Sidelights 45
+    2300488: Door_Glass_Double_Sidelights 46
+    2300490: Door_Glass_Double_Sidelights 47
+    2300492: Door_Glass_Double_Sidelights 48
+    2300494: Door_Glass_Double_Sidelights 49
+    2300496: Door_Glass_Double_Sidelights 5
+    2300498: Door_Glass_Double_Sidelights 50
+    2300500: Door_Glass_Double_Sidelights 51
+    2300502: Door_Glass_Double_Sidelights 52
+    2300504: Door_Glass_Double_Sidelights 53
+    2300506: Door_Glass_Double_Sidelights 54
+    2300508: Door_Glass_Double_Sidelights 55
+    2300510: Door_Glass_Double_Sidelights 56
+    2300512: Door_Glass_Double_Sidelights 57
+    2300514: Door_Glass_Double_Sidelights 58
+    2300516: Door_Glass_Double_Sidelights 59
+    2300518: Door_Glass_Double_Sidelights 6
+    2300520: Door_Glass_Double_Sidelights 60
+    2300522: Door_Glass_Double_Sidelights 61
+    2300524: Door_Glass_Double_Sidelights 62
+    2300526: Door_Glass_Double_Sidelights 63
+    2300528: Door_Glass_Double_Sidelights 64
+    2300530: Door_Glass_Double_Sidelights 65
+    2300532: Door_Glass_Double_Sidelights 66
+    2300534: Door_Glass_Double_Sidelights 67
+    2300536: Door_Glass_Double_Sidelights 68
+    2300538: Door_Glass_Double_Sidelights 69
+    2300540: Door_Glass_Double_Sidelights 7
+    2300542: Door_Glass_Double_Sidelights 70
+    2300544: Door_Glass_Double_Sidelights 71
+    2300546: Door_Glass_Double_Sidelights 72
+    2300548: Door_Glass_Double_Sidelights 73
+    2300550: Door_Glass_Double_Sidelights 74
+    2300552: Door_Glass_Double_Sidelights 75
+    2300554: Door_Glass_Double_Sidelights 76
+    2300556: Door_Glass_Double_Sidelights 77
+    2300558: Door_Glass_Double_Sidelights 78
+    2300560: Door_Glass_Double_Sidelights 79
+    2300562: Door_Glass_Double_Sidelights 8
+    2300564: Door_Glass_Double_Sidelights 80
+    2300566: Door_Glass_Double_Sidelights 81
+    2300568: Door_Glass_Double_Sidelights 82
+    2300570: Door_Glass_Double_Sidelights 83
+    2300572: Door_Glass_Double_Sidelights 84
+    2300574: Door_Glass_Double_Sidelights 85
+    2300576: Door_Glass_Double_Sidelights 86
+    2300578: Door_Glass_Double_Sidelights 87
+    2300580: Door_Glass_Double_Sidelights 88
+    2300582: Door_Glass_Double_Sidelights 89
+    2300584: Door_Glass_Double_Sidelights 9
+    2300586: Door_Glass_Double_Sidelights 90
+    2300588: Door_Glass_Double_Sidelights 91
+    2300590: Door_Glass_Double_Sidelights 92
+    2300592: Door_Glass_Double_Sidelights 93
+    2300594: Door_Glass_Double_Sidelights 94
+    2300596: Door_Glass_Double_Sidelights 95
+    2300598: Door_Glass_Double_Sidelights 96
+    2300600: Door_Glass_Double_Sidelights 97
+    2300602: Door_Glass_Double_Sidelights 98
+    2300604: Door_Glass_Double_Sidelights 99
+    2300606: Group 187
+    2300608: Group 189
+    2300610: Group 191
+    2300612: Group 231
+    2300614: Group 233
+    2300616: Group 235
+    2300618: Group 263
+    2300620: Group 265
+    2300622: Group 267
+    2300624: Image 2
+    2300626: M
+    2300628: Morgan Senny Lux
+    2300630: //RootNode
+    2300632: Window_Casement_Wood_Triple_81.5x36
+    2300634: Window_Casement_Wood_Triple_81.5x36 1
+    2300636: Window_Casement_Wood_Triple_81.5x36 2
+    2300638: Window_Doublehung_23x58
+    2300640: Window_Doublehung_23x58 1
+    2300642: Window_Doublehung_23x58 10
+    2300644: Window_Doublehung_23x58 11
+    2300646: Window_Doublehung_23x58 12
+    2300648: Window_Doublehung_23x58 13
+    2300650: Window_Doublehung_23x58 14
+    2300652: Window_Doublehung_23x58 15
+    2300654: Window_Doublehung_23x58 16
+    2300656: Window_Doublehung_23x58 17
+    2300658: Window_Doublehung_23x58 18
+    2300660: Window_Doublehung_23x58 19
+    2300662: Window_Doublehung_23x58 2
+    2300664: Window_Doublehung_23x58 20
+    2300666: Window_Doublehung_23x58 21
+    2300668: Window_Doublehung_23x58 22
+    2300670: Window_Doublehung_23x58 23
+    2300672: Window_Doublehung_23x58 3
+    2300674: Window_Doublehung_23x58 4
+    2300676: Window_Doublehung_23x58 5
+    2300678: Window_Doublehung_23x58 6
+    2300680: Window_Doublehung_23x58 7
+    2300682: Window_Doublehung_23x58 8
+    2300684: Window_Doublehung_23x58 9
+    3300000: 2D_Animal_Dog_Lucy
+    3300002: 2D_Man_Backpack
+    3300004: 2D_Man_BaseballCap
+    3300006: 2D_Man_Business
+    3300008: 2D_Man_Skateboard
+    3300010: 2D_Man_Suit
+    3300012: 2D_Man_Suit 1
+    3300014: 2D_Man_Suit 2
+    3300016: 2D_Man_Walking_Toward
+    3300018: 2D_Woman+Child
+    3300020: 2D_Woman+Child 1
+    3300022: 2D_Woman_Nalgene Bottle
+    3300024: 2D_Woman_Sweater
+    3300026: 2D_Woman_Walking Away
+    3300028: Bryce#1
+    3300030: C I T Y  T O W E#1
+    3300032: CITY TOWERS
+    3300034: Component#1
+    3300036: Component#1 1
+    3300038: Component#1 10
+    3300040: Component#1 11
+    3300042: Component#1 12
+    3300044: Component#1 13
+    3300046: Component#1 14
+    3300048: Component#1 15
+    3300050: Component#1 16
+    3300052: Component#1 17
+    3300054: Component#1 18
+    3300056: Component#1 19
+    3300058: Component#1 2
+    3300060: Component#1 20
+    3300062: Component#1 21
+    3300064: Component#1 22
+    3300066: Component#1 23
+    3300068: Component#1 24
+    3300070: Component#1 25
+    3300072: Component#1 26
+    3300074: Component#1 27
+    3300076: Component#1 28
+    3300078: Component#1 29
+    3300080: Component#1 3
+    3300082: Component#1 30
+    3300084: Component#1 31
+    3300086: Component#1 32
+    3300088: Component#1 33
+    3300090: Component#1 34
+    3300092: Component#1 35
+    3300094: Component#1 36
+    3300096: Component#1 37
+    3300098: Component#1 38
+    3300100: Component#1 39
+    3300102: Component#1 4
+    3300104: Component#1 40
+    3300106: Component#1 41
+    3300108: Component#1 42
+    3300110: Component#1 43
+    3300112: Component#1 44
+    3300114: Component#1 45
+    3300116: Component#1 46
+    3300118: Component#1 47
+    3300120: Component#1 5
+    3300122: Component#1 6
+    3300124: Component#1 7
+    3300126: Component#1 8
+    3300128: Component#1 9
+    3300130: Door_Glass Double_Sidelights
+    3300132: Door_Glass Double_Sidelights 1
+    3300134: Door_Glass Double_Sidelights#1
+    3300136: Door_Glass Double_Sidelights#1 1
+    3300138: Door_Glass Double_Sidelights#1 2
+    3300140: Door_Glass Double_Sidelights#1 3
+    3300142: Door_Glass Double_Sidelights#1 4
+    3300144: Door_Glass Double_Sidelights#1 5
+    3300146: Door_Glass_Double_Sidelights
+    3300148: Door_Glass_Double_Sidelights 1
+    3300150: Door_Glass_Double_Sidelights 10
+    3300152: Door_Glass_Double_Sidelights 100
+    3300154: Door_Glass_Double_Sidelights 101
+    3300156: Door_Glass_Double_Sidelights 102
+    3300158: Door_Glass_Double_Sidelights 103
+    3300160: Door_Glass_Double_Sidelights 104
+    3300162: Door_Glass_Double_Sidelights 105
+    3300164: Door_Glass_Double_Sidelights 106
+    3300166: Door_Glass_Double_Sidelights 107
+    3300168: Door_Glass_Double_Sidelights 108
+    3300170: Door_Glass_Double_Sidelights 109
+    3300172: Door_Glass_Double_Sidelights 11
+    3300174: Door_Glass_Double_Sidelights 110
+    3300176: Door_Glass_Double_Sidelights 111
+    3300178: Door_Glass_Double_Sidelights 112
+    3300180: Door_Glass_Double_Sidelights 113
+    3300182: Door_Glass_Double_Sidelights 114
+    3300184: Door_Glass_Double_Sidelights 115
+    3300186: Door_Glass_Double_Sidelights 116
+    3300188: Door_Glass_Double_Sidelights 117
+    3300190: Door_Glass_Double_Sidelights 118
+    3300192: Door_Glass_Double_Sidelights 119
+    3300194: Door_Glass_Double_Sidelights 12
+    3300196: Door_Glass_Double_Sidelights 120
+    3300198: Door_Glass_Double_Sidelights 121
+    3300200: Door_Glass_Double_Sidelights 122
+    3300202: Door_Glass_Double_Sidelights 123
+    3300204: Door_Glass_Double_Sidelights 124
+    3300206: Door_Glass_Double_Sidelights 125
+    3300208: Door_Glass_Double_Sidelights 126
+    3300210: Door_Glass_Double_Sidelights 127
+    3300212: Door_Glass_Double_Sidelights 128
+    3300214: Door_Glass_Double_Sidelights 129
+    3300216: Door_Glass_Double_Sidelights 13
+    3300218: Door_Glass_Double_Sidelights 130
+    3300220: Door_Glass_Double_Sidelights 131
+    3300222: Door_Glass_Double_Sidelights 132
+    3300224: Door_Glass_Double_Sidelights 133
+    3300226: Door_Glass_Double_Sidelights 134
+    3300228: Door_Glass_Double_Sidelights 135
+    3300230: Door_Glass_Double_Sidelights 136
+    3300232: Door_Glass_Double_Sidelights 137
+    3300234: Door_Glass_Double_Sidelights 138
+    3300236: Door_Glass_Double_Sidelights 139
+    3300238: Door_Glass_Double_Sidelights 14
+    3300240: Door_Glass_Double_Sidelights 140
+    3300242: Door_Glass_Double_Sidelights 141
+    3300244: Door_Glass_Double_Sidelights 142
+    3300246: Door_Glass_Double_Sidelights 143
+    3300248: Door_Glass_Double_Sidelights 144
+    3300250: Door_Glass_Double_Sidelights 145
+    3300252: Door_Glass_Double_Sidelights 146
+    3300254: Door_Glass_Double_Sidelights 147
+    3300256: Door_Glass_Double_Sidelights 148
+    3300258: Door_Glass_Double_Sidelights 149
+    3300260: Door_Glass_Double_Sidelights 15
+    3300262: Door_Glass_Double_Sidelights 150
+    3300264: Door_Glass_Double_Sidelights 151
+    3300266: Door_Glass_Double_Sidelights 152
+    3300268: Door_Glass_Double_Sidelights 153
+    3300270: Door_Glass_Double_Sidelights 154
+    3300272: Door_Glass_Double_Sidelights 155
+    3300274: Door_Glass_Double_Sidelights 156
+    3300276: Door_Glass_Double_Sidelights 157
+    3300278: Door_Glass_Double_Sidelights 158
+    3300280: Door_Glass_Double_Sidelights 159
+    3300282: Door_Glass_Double_Sidelights 16
+    3300284: Door_Glass_Double_Sidelights 160
+    3300286: Door_Glass_Double_Sidelights 161
+    3300288: Door_Glass_Double_Sidelights 162
+    3300290: Door_Glass_Double_Sidelights 163
+    3300292: Door_Glass_Double_Sidelights 164
+    3300294: Door_Glass_Double_Sidelights 165
+    3300296: Door_Glass_Double_Sidelights 166
+    3300298: Door_Glass_Double_Sidelights 167
+    3300300: Door_Glass_Double_Sidelights 168
+    3300302: Door_Glass_Double_Sidelights 169
+    3300304: Door_Glass_Double_Sidelights 17
+    3300306: Door_Glass_Double_Sidelights 170
+    3300308: Door_Glass_Double_Sidelights 171
+    3300310: Door_Glass_Double_Sidelights 172
+    3300312: Door_Glass_Double_Sidelights 173
+    3300314: Door_Glass_Double_Sidelights 174
+    3300316: Door_Glass_Double_Sidelights 175
+    3300318: Door_Glass_Double_Sidelights 176
+    3300320: Door_Glass_Double_Sidelights 177
+    3300322: Door_Glass_Double_Sidelights 178
+    3300324: Door_Glass_Double_Sidelights 179
+    3300326: Door_Glass_Double_Sidelights 18
+    3300328: Door_Glass_Double_Sidelights 180
+    3300330: Door_Glass_Double_Sidelights 181
+    3300332: Door_Glass_Double_Sidelights 182
+    3300334: Door_Glass_Double_Sidelights 183
+    3300336: Door_Glass_Double_Sidelights 184
+    3300338: Door_Glass_Double_Sidelights 185
+    3300340: Door_Glass_Double_Sidelights 186
+    3300342: Door_Glass_Double_Sidelights 187
+    3300344: Door_Glass_Double_Sidelights 188
+    3300346: Door_Glass_Double_Sidelights 189
+    3300348: Door_Glass_Double_Sidelights 19
+    3300350: Door_Glass_Double_Sidelights 190
+    3300352: Door_Glass_Double_Sidelights 191
+    3300354: Door_Glass_Double_Sidelights 192
+    3300356: Door_Glass_Double_Sidelights 193
+    3300358: Door_Glass_Double_Sidelights 194
+    3300360: Door_Glass_Double_Sidelights 195
+    3300362: Door_Glass_Double_Sidelights 196
+    3300364: Door_Glass_Double_Sidelights 197
+    3300366: Door_Glass_Double_Sidelights 198
+    3300368: Door_Glass_Double_Sidelights 199
+    3300370: Door_Glass_Double_Sidelights 2
+    3300372: Door_Glass_Double_Sidelights 20
+    3300374: Door_Glass_Double_Sidelights 200
+    3300376: Door_Glass_Double_Sidelights 201
+    3300378: Door_Glass_Double_Sidelights 202
+    3300380: Door_Glass_Double_Sidelights 203
+    3300382: Door_Glass_Double_Sidelights 204
+    3300384: Door_Glass_Double_Sidelights 205
+    3300386: Door_Glass_Double_Sidelights 206
+    3300388: Door_Glass_Double_Sidelights 207
+    3300390: Door_Glass_Double_Sidelights 208
+    3300392: Door_Glass_Double_Sidelights 209
+    3300394: Door_Glass_Double_Sidelights 21
+    3300396: Door_Glass_Double_Sidelights 210
+    3300398: Door_Glass_Double_Sidelights 211
+    3300400: Door_Glass_Double_Sidelights 212
+    3300402: Door_Glass_Double_Sidelights 213
+    3300404: Door_Glass_Double_Sidelights 214
+    3300406: Door_Glass_Double_Sidelights 215
+    3300408: Door_Glass_Double_Sidelights 216
+    3300410: Door_Glass_Double_Sidelights 217
+    3300412: Door_Glass_Double_Sidelights 218
+    3300414: Door_Glass_Double_Sidelights 219
+    3300416: Door_Glass_Double_Sidelights 22
+    3300418: Door_Glass_Double_Sidelights 220
+    3300420: Door_Glass_Double_Sidelights 221
+    3300422: Door_Glass_Double_Sidelights 222
+    3300424: Door_Glass_Double_Sidelights 223
+    3300426: Door_Glass_Double_Sidelights 224
+    3300428: Door_Glass_Double_Sidelights 225
+    3300430: Door_Glass_Double_Sidelights 226
+    3300432: Door_Glass_Double_Sidelights 227
+    3300434: Door_Glass_Double_Sidelights 228
+    3300436: Door_Glass_Double_Sidelights 229
+    3300438: Door_Glass_Double_Sidelights 23
+    3300440: Door_Glass_Double_Sidelights 24
+    3300442: Door_Glass_Double_Sidelights 25
+    3300444: Door_Glass_Double_Sidelights 26
+    3300446: Door_Glass_Double_Sidelights 27
+    3300448: Door_Glass_Double_Sidelights 28
+    3300450: Door_Glass_Double_Sidelights 29
+    3300452: Door_Glass_Double_Sidelights 3
+    3300454: Door_Glass_Double_Sidelights 30
+    3300456: Door_Glass_Double_Sidelights 31
+    3300458: Door_Glass_Double_Sidelights 32
+    3300460: Door_Glass_Double_Sidelights 33
+    3300462: Door_Glass_Double_Sidelights 34
+    3300464: Door_Glass_Double_Sidelights 35
+    3300466: Door_Glass_Double_Sidelights 36
+    3300468: Door_Glass_Double_Sidelights 37
+    3300470: Door_Glass_Double_Sidelights 38
+    3300472: Door_Glass_Double_Sidelights 39
+    3300474: Door_Glass_Double_Sidelights 4
+    3300476: Door_Glass_Double_Sidelights 40
+    3300478: Door_Glass_Double_Sidelights 41
+    3300480: Door_Glass_Double_Sidelights 42
+    3300482: Door_Glass_Double_Sidelights 43
+    3300484: Door_Glass_Double_Sidelights 44
+    3300486: Door_Glass_Double_Sidelights 45
+    3300488: Door_Glass_Double_Sidelights 46
+    3300490: Door_Glass_Double_Sidelights 47
+    3300492: Door_Glass_Double_Sidelights 48
+    3300494: Door_Glass_Double_Sidelights 49
+    3300496: Door_Glass_Double_Sidelights 5
+    3300498: Door_Glass_Double_Sidelights 50
+    3300500: Door_Glass_Double_Sidelights 51
+    3300502: Door_Glass_Double_Sidelights 52
+    3300504: Door_Glass_Double_Sidelights 53
+    3300506: Door_Glass_Double_Sidelights 54
+    3300508: Door_Glass_Double_Sidelights 55
+    3300510: Door_Glass_Double_Sidelights 56
+    3300512: Door_Glass_Double_Sidelights 57
+    3300514: Door_Glass_Double_Sidelights 58
+    3300516: Door_Glass_Double_Sidelights 59
+    3300518: Door_Glass_Double_Sidelights 6
+    3300520: Door_Glass_Double_Sidelights 60
+    3300522: Door_Glass_Double_Sidelights 61
+    3300524: Door_Glass_Double_Sidelights 62
+    3300526: Door_Glass_Double_Sidelights 63
+    3300528: Door_Glass_Double_Sidelights 64
+    3300530: Door_Glass_Double_Sidelights 65
+    3300532: Door_Glass_Double_Sidelights 66
+    3300534: Door_Glass_Double_Sidelights 67
+    3300536: Door_Glass_Double_Sidelights 68
+    3300538: Door_Glass_Double_Sidelights 69
+    3300540: Door_Glass_Double_Sidelights 7
+    3300542: Door_Glass_Double_Sidelights 70
+    3300544: Door_Glass_Double_Sidelights 71
+    3300546: Door_Glass_Double_Sidelights 72
+    3300548: Door_Glass_Double_Sidelights 73
+    3300550: Door_Glass_Double_Sidelights 74
+    3300552: Door_Glass_Double_Sidelights 75
+    3300554: Door_Glass_Double_Sidelights 76
+    3300556: Door_Glass_Double_Sidelights 77
+    3300558: Door_Glass_Double_Sidelights 78
+    3300560: Door_Glass_Double_Sidelights 79
+    3300562: Door_Glass_Double_Sidelights 8
+    3300564: Door_Glass_Double_Sidelights 80
+    3300566: Door_Glass_Double_Sidelights 81
+    3300568: Door_Glass_Double_Sidelights 82
+    3300570: Door_Glass_Double_Sidelights 83
+    3300572: Door_Glass_Double_Sidelights 84
+    3300574: Door_Glass_Double_Sidelights 85
+    3300576: Door_Glass_Double_Sidelights 86
+    3300578: Door_Glass_Double_Sidelights 87
+    3300580: Door_Glass_Double_Sidelights 88
+    3300582: Door_Glass_Double_Sidelights 89
+    3300584: Door_Glass_Double_Sidelights 9
+    3300586: Door_Glass_Double_Sidelights 90
+    3300588: Door_Glass_Double_Sidelights 91
+    3300590: Door_Glass_Double_Sidelights 92
+    3300592: Door_Glass_Double_Sidelights 93
+    3300594: Door_Glass_Double_Sidelights 94
+    3300596: Door_Glass_Double_Sidelights 95
+    3300598: Door_Glass_Double_Sidelights 96
+    3300600: Door_Glass_Double_Sidelights 97
+    3300602: Door_Glass_Double_Sidelights 98
+    3300604: Door_Glass_Double_Sidelights 99
+    3300606: Group 187
+    3300608: Group 189
+    3300610: Group 191
+    3300612: Group 231
+    3300614: Group 233
+    3300616: Group 235
+    3300618: Group 263
+    3300620: Group 265
+    3300622: Group 267
+    3300624: Image 2
+    3300626: M
+    3300628: Morgan Senny Lux
+    3300630: //RootNode
+    3300632: Window_Casement_Wood_Triple_81.5x36
+    3300634: Window_Casement_Wood_Triple_81.5x36 1
+    3300636: Window_Casement_Wood_Triple_81.5x36 2
+    3300638: Window_Doublehung_23x58
+    3300640: Window_Doublehung_23x58 1
+    3300642: Window_Doublehung_23x58 10
+    3300644: Window_Doublehung_23x58 11
+    3300646: Window_Doublehung_23x58 12
+    3300648: Window_Doublehung_23x58 13
+    3300650: Window_Doublehung_23x58 14
+    3300652: Window_Doublehung_23x58 15
+    3300654: Window_Doublehung_23x58 16
+    3300656: Window_Doublehung_23x58 17
+    3300658: Window_Doublehung_23x58 18
+    3300660: Window_Doublehung_23x58 19
+    3300662: Window_Doublehung_23x58 2
+    3300664: Window_Doublehung_23x58 20
+    3300666: Window_Doublehung_23x58 21
+    3300668: Window_Doublehung_23x58 22
+    3300670: Window_Doublehung_23x58 23
+    3300672: Window_Doublehung_23x58 3
+    3300674: Window_Doublehung_23x58 4
+    3300676: Window_Doublehung_23x58 5
+    3300678: Window_Doublehung_23x58 6
+    3300680: Window_Doublehung_23x58 7
+    3300682: Window_Doublehung_23x58 8
+    3300684: Window_Doublehung_23x58 9
+    4300000: Mesh Morgan+senny+apartmets
+    4300002: Mesh Morgan+senny+apartmets
+    4300004: Mesh Door_Glass_Double_Sidelights
+    4300006: Mesh Window_Doublehung_23x58
+    4300008: Mesh Component#1
+    4300010: Mesh Bryce#1
+    4300012: Mesh Door_Glass Double_Sidelights#1
+    4300014: Mesh 2D_Man_Business
+    4300016: Mesh Window_Casement_Wood_Triple_81.5x36
+    4300018: Mesh Group 187
+    4300020: Mesh Group 189
+    4300022: Mesh Group 191
+    4300024: Mesh Door_Glass Double_Sidelights
+    4300026: Mesh Morgan Senny Lux
+    4300028: Mesh C I T Y  T O W E#1
+    4300030: Mesh CITY TOWERS
+    4300032: Mesh 2D_Man_Backpack
+    4300034: Mesh 2D_Man_BaseballCap
+    4300036: Mesh 2D_Man_Suit
+    4300038: Mesh 2D_Woman_Nalgene Bottle
+    4300040: Mesh 2D_Man_Skateboard
+    4300042: Mesh 2D_Man_Walking_Toward
+    4300044: Mesh 2D_Woman+Child
+    4300046: Mesh 2D_Woman_Sweater
+    4300048: Mesh M
+    4300050: Mesh 2D_Woman_Walking Away
+    4300052: Mesh 2D_Animal_Dog_Lucy
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

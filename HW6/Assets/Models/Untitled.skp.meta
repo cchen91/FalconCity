@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: fc95e65cb4ffc5e4aa4da46820176fd6
+timeCreated: 1464577103
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 0000000001000000020000000500000006000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f00000020000000210000002200000023000000240000002500000026000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 490a6fec5ad09f99cc75611f4f9d73e5
+  longitude: -74.00931293856536
+  latitude: 40.705521679305676
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 320.81363, y: 83.75295, z: -227.27354}
+      lookAt: {x: -64.70476, y: 114.16011, z: 28.809118}
+      up: {x: 0.054608554, y: 0.99784875, z: -0.036274027}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 20 Exchange Place
+    100002: Google Earth Terrain
+    100004: Group 9
+    100006: statue
+    100008: statue 1
+    100010: statue 10
+    100012: statue 11
+    100014: statue 12
+    100016: statue 13
+    100018: statue 2
+    100020: statue 3
+    100022: statue 4
+    100024: statue 5
+    100026: statue 6
+    100028: statue 7
+    100030: statue 8
+    100032: statue 9
+    100034: //RootNode
+    400000: 20 Exchange Place
+    400002: Google Earth Terrain
+    400004: Group 9
+    400006: statue
+    400008: statue 1
+    400010: statue 10
+    400012: statue 11
+    400014: statue 12
+    400016: statue 13
+    400018: statue 2
+    400020: statue 3
+    400022: statue 4
+    400024: statue 5
+    400026: statue 6
+    400028: statue 7
+    400030: statue 8
+    400032: statue 9
+    400034: //RootNode
+    2300000: 20 Exchange Place
+    2300002: Google Earth Terrain
+    2300004: Group 9
+    2300006: statue
+    2300008: statue 1
+    2300010: statue 10
+    2300012: statue 11
+    2300014: statue 12
+    2300016: statue 13
+    2300018: statue 2
+    2300020: statue 3
+    2300022: statue 4
+    2300024: statue 5
+    2300026: statue 6
+    2300028: statue 7
+    2300030: statue 8
+    2300032: statue 9
+    3300000: 20 Exchange Place
+    3300002: Google Earth Terrain
+    3300004: Group 9
+    3300006: statue
+    3300008: statue 1
+    3300010: statue 10
+    3300012: statue 11
+    3300014: statue 12
+    3300016: statue 13
+    3300018: statue 2
+    3300020: statue 3
+    3300022: statue 4
+    3300024: statue 5
+    3300026: statue 6
+    3300028: statue 7
+    3300030: statue 8
+    3300032: statue 9
+    4300000: Mesh Google Earth Terrain
+    4300002: Mesh 20 Exchange Place
+    4300004: Mesh Group 9
+    4300006: Mesh statue
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
