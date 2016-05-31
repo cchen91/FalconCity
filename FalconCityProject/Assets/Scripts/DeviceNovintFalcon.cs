@@ -81,11 +81,17 @@ public class DeviceNovintFalcon : MonoBehaviour {
 	private Vector3 MoveThrottle            = Vector3.zero;
 	public float TranslationSensitivity     = 10.0f;
     float moveSpeedConst = 1.0f;
-    float stiffness = 50.0f;
+    
+    
     Vector3 initialPos = Vector3.zero;
     Vector3 origContactPoint = Vector3.zero;
     Vector3 contactNormal = Vector3.zero;
+   
+    //for each texture
+    float stiffness = 50.0f;
+    float surfaceStrength = 35.0f;
 
+    //marker to see where force is being guided towards
     public GameObject guideObject;
 
 	#endregion
@@ -127,12 +133,13 @@ public class DeviceNovintFalcon : MonoBehaviour {
 		//Debug.Log(isButton0Down() + " , " + isButton1Down() + " , " + isButton2Down() + " , " + isButton3Down());
 	}
 
+    #region Collision
     private void OnCollisionEnter(Collision c)
     {
         if(c.collider.tag == "Surface")
         {
             contactNormal = c.contacts[0].normal;
-            //Debug.Log("OnCollisionEnter entered, normal is " + contactNormal.ToString());
+            Debug.Log("OnCollisionEnter entered, normal is " + contactNormal.ToString());
             origContactPoint = gameObject.transform.position;
         }
     }
@@ -162,11 +169,6 @@ public class DeviceNovintFalcon : MonoBehaviour {
         
         if(c.collider.tag == "Surface")
         {
-            //Debug.Log("Oncollisionstay detected colliding with " + c.gameObject.name);
-            //float force = stiffness * (gameObject.transform.position - contactPoint).magnitude;
-            //Vector3 forceVector = contactNormal * stiffness;
-            
-
             Vector3 vecToOriginal = c.contacts[0].point - origContactPoint;
             Debug.DrawLine(c.contacts[0].point, origContactPoint,Color.black);
 
@@ -174,24 +176,15 @@ public class DeviceNovintFalcon : MonoBehaviour {
             float scalarProj = vecToOriginal.magnitude * Mathf.Cos(ang);
             Vector3 vectorProj = scalarProj * (contactNormal / contactNormal.magnitude);
 
-            //Vector3 pointingOutward = Vector3.Dot(contactNormal, vecToOriginal) * Mathf.Cos(ang);
             Debug.DrawLine(c.contacts[0].point, c.contacts[0].point+vectorProj, Color.red);
-            //Debug.DrawLine()
-
             Vector3 normalOutsidePos = c.contacts[0].point - vectorProj;
-            Debug.Log(ang);
+            //Debug.Log(ang);
             guideObject.transform.position = normalOutsidePos;
-            
-            /*
-            SpeedX = forceVector.x;
-            SpeedY = forceVector.y;
-            SpeedZ = forceVector.z;
-            */
+
             PosX = normalOutsidePos.x;
             PosY = normalOutsidePos.y;
             PosZ = normalOutsidePos.z;
-            Strength = 30.0f;
-            
+            Strength = surfaceStrength;
         }
         
         //SetServo(new double[3] { forceVector.x, forceVector.y, forceVector.z });
@@ -201,12 +194,7 @@ public class DeviceNovintFalcon : MonoBehaviour {
     {
         if(c.collider.tag == "Surface")
         {
-            //Debug.Log("leaving collision.");
-            /*
-            double x = gameObject.transform.position.x;
-            double y = gameObject.transform.position.y;
-            double z = gameObject.transform.position.z;
-            SetServoPos(new double[3] { x, y, z }, 0.0f);*/
+            //Reset everything
             SpeedX = 0.0f;
             SpeedY = 0.0f;
             SpeedZ = 0.0f;
@@ -215,20 +203,19 @@ public class DeviceNovintFalcon : MonoBehaviour {
         
     }
 
-	/// <summary>
-	/// デバイス動作制御
-	/// </summary>
+    #endregion
+
+
+    #region ForceUpdate
+
 	private void _feedback() {
 		// NovintFalconのグリップをデフォ位置に戻す
-		//SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
+		SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
 		SetServoPos(new double[3] { PosX, PosY, PosZ }, Strength);
         //SetServoPos(new double[3] { 0, 0, 0 }, Strength);
 		//Debug.Log(GetServoPos());
 	}
 
-	/// <summary>
-	/// キャラクター動作制御
-	/// </summary>
 	private void _charaMove() {
 		if ((float)GetZPos() >= 0.8f)  MoveThrottle += __moveVector(Vector3.forward);
 		if ((float)GetZPos() <= -0.8f) MoveThrottle += __moveVector(Vector3.back);
@@ -252,7 +239,9 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
 	#endregion
 
-	//-------------------------------------------------
+    #endregion
+
+    //-------------------------------------------------
 	#region Misc
 	
 	void OnApplicationQuit() {
