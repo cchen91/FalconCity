@@ -178,7 +178,8 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
             Debug.DrawLine(c.contacts[0].point, c.contacts[0].point+vectorProj, Color.red);
             Vector3 normalOutsidePos = c.contacts[0].point - vectorProj;
-            //Debug.Log(ang);
+            Debug.Log("Oncollisionstay detected, strength is " + Strength + ", difference between object and goal is " + (normalOutsidePos -gameObject.transform.position).ToString());
+            Debug.Log("goalPos is " + normalOutsidePos.ToString() + ", and object pos is " + gameObject.transform.position.ToString());
             guideObject.transform.position = normalOutsidePos;
 
             PosX = normalOutsidePos.x;
@@ -210,7 +211,7 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
 	private void _feedback() {
 		// NovintFalconのグリップをデフォ位置に戻す
-		SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
+		//SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
 		SetServoPos(new double[3] { PosX, PosY, PosZ }, Strength);
         //SetServoPos(new double[3] { 0, 0, 0 }, Strength);
 		//Debug.Log(GetServoPos());
