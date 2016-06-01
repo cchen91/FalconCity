@@ -4,21 +4,6 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.IO;
 
-/// <summary>
-/// NovintFalconを操作デバイスとして使うscript ※Windows用（dll依存）
-///
-/// usage:
-///  1. http://forum.unity3d.com/threads/6494-Novint-falcon から
-///     Falcon Wrapper Source - Update V1.zip をDL、FalconWrapper.dllをAssetsと同階層へコピー
-///     ビルド後はWindowsのPathが通っているところにFalconWrapper.dllを置くか、バイナリと同階層に置く
-///  2. このスクリプトをプロジェクトへIn
-///  3. 操作したい対象のGameObjectにAdd Component
-///  4. Inspectorで適当に弄って察する
-/// ※対象の動きをNovintFalconへHapticする方法は_feedback参照
-///
-/// NovintFalconの正しい使い方 - Unity Advent Calendar 2013 vol.23
-/// http://yunojy.github.io/blog/2013/12/23/how-to-use-novintfalcon-unity-advent-calendar-2013-vol-dot-23/
-/// </summary>
 public class DeviceNovintFalcon : MonoBehaviour {
 
 	#region FalconWrapper.dll Variables
@@ -87,10 +72,14 @@ public class DeviceNovintFalcon : MonoBehaviour {
     Vector3 origContactPoint = Vector3.zero;
     Vector3 origContactObjectPoint = Vector3.zero;
     Vector3 contactNormal = Vector3.zero;
-   
+
     //for each texture
     float stiffness = 50.0f;
     float surfaceStrength = 50.0f;
+    float viscocity = 7.0f;
+    int flag = 0; //1: surface, 2: water, 3: sand, 4: pop
+    bool somethingInTouch; //allow only one collision at once
+    GameObject touchingObject;
 
     //marker to see where force is being guided towards
     public GameObject guideObject;
@@ -100,9 +89,13 @@ public class DeviceNovintFalcon : MonoBehaviour {
     GameObject buildingInTouch;
     bool isGrabbingBuilding;
     GameObject grabbedBuilding;
+    BoxCollider grabbedBuildingCollider;
 
-    public GameObject flame;
-    public AudioSource screaming;
+    public GameObject explosion;
+    public GameObject fire;
+    public AudioClip screaming;
+    public AudioClip splash;
+    AudioSource thisAudioSource;
     bool isPeaceful = true;
 
 	#endregion
@@ -116,6 +109,11 @@ public class DeviceNovintFalcon : MonoBehaviour {
         initialPos = gameObject.transform.position;
 		StartCoroutine(_initHaptics());
 		Charactor = gameObject.GetComponent<CharacterController>();
+        grabbedBuildingCollider = gameObject.AddComponent<BoxCollider>();
+        grabbedBuildingCollider.enabled = false;
+        thisAudioSource = gameObject.GetComponent<AudioSource>();
+
+        somethingInTouch = false;
 	}
 	
 	private IEnumerator _initHaptics() {
@@ -148,6 +146,15 @@ public class DeviceNovintFalcon : MonoBehaviour {
     
     }
 
+    void CopyColliderProperties(BoxCollider collider, GameObject building)
+    {
+        Debug.Log("This building is " + building.name);
+        Debug.Log("and collider is " + building.GetComponent<BoxCollider>().name);
+        BoxCollider bCollider = building.GetComponent<BoxCollider>();
+        collider.center = bCollider.bounds.center;
+        collider.size = bCollider.bounds.size;
+    }
+
     #region Button
     void MainButtonControl()
     {
@@ -156,17 +163,32 @@ public class DeviceNovintFalcon : MonoBehaviour {
             if (isPeaceful)
             {
                 isPeaceful = false;
-                screaming.Play();
+                thisAudioSource.PlayOneShot(screaming);
             }
 
             //If button is pressed but I'm not grabbing a building that I'm touching
             if (isBuildingInTouch && grabbedBuilding != buildingInTouch) 
             { //then grab it! 
                 isGrabbingBuilding = true;
+                gameObject.GetComponent<SphereCollider>().enabled = false; //remove this hand's box
+                resetHapticParams(); //let go of any force 
+                
+                //attach building as child object
                 grabbedBuilding = buildingInTouch;
                 grabbedBuilding.transform.parent = gameObject.transform;
-                GameObject.Instantiate(flame,grabbedBuilding.transform.position, new Quaternion()); //create flame!!
-                grabbedBuilding.transform.localPosition = new Vector3(grabbedBuilding.transform.localScale.x / 2, +grabbedBuilding.transform.localScale.y / 2, grabbedBuilding.transform.localScale.z / 2);
+
+                //copy collider
+                CopyColliderProperties(grabbedBuildingCollider, grabbedBuilding); 
+                grabbedBuildingCollider.enabled = true;
+
+                ///gameObject.AddComponent(grabbedBuilding.GetComponent<Collider>());
+
+                //elements of destruction
+                GameObject.Instantiate(explosion,grabbedBuilding.transform.position, new Quaternion()); //create flame!!
+                GameObject.Instantiate(fire, grabbedBuilding.transform.position, new Quaternion()); //create flame!!
+
+                
+                grabbedBuilding.transform.localPosition = new Vector3(0, -grabbedBuilding.transform.lossyScale.y / 2, 0);
                 grabbedBuilding.GetComponent<BuildingScript>().getsGrabbed();
             }
         }
@@ -174,11 +196,16 @@ public class DeviceNovintFalcon : MonoBehaviour {
         {
             if(grabbedBuilding != null) //button released but there still is a grabbed building.
             {
+                isGrabbingBuilding = false;
+             
                 grabbedBuilding.transform.parent = null;
+                grabbedBuildingCollider.enabled = false;
+                gameObject.GetComponent<SphereCollider>().enabled = true;
+                grabbedBuilding.GetComponent<BuildingScript>().letGo();
 
+                grabbedBuilding = null;
             }
         }
-        
     }
     #endregion
 
@@ -186,82 +213,159 @@ public class DeviceNovintFalcon : MonoBehaviour {
     #region Collision
     private void OnCollisionEnter(Collision c)
     {
-        if(c.collider.tag == "Surface")
-        {
-            contactNormal = c.contacts[0].normal;
-            Debug.Log("OnCollisionEnter entered, normal is " + contactNormal.ToString());
-            origContactObjectPoint = gameObject.transform.position;
-            origContactPoint = c.contacts[0].point;
-        }
-    }
+        Debug.Log("Detecting Collidions.");
 
-    private void OnTriggerEnter(Collider c) //when triggering walll
-    {
-        //Debug.Log("Entered contact with something.");
-        //Debug.Log("entering trigger."  );
-        if(c.tag == "Surface" || c.tag == "Ground")
-        {
-           // Debug.Log("Entered contact with " + c.tag);
+        Debug.Log("OnCollisionEnter entered, before filter and collision type is " + c.collider.tag + "and object name is " + c.collider.gameObject.name);
 
-            //contactPoint = gameObject.transform.position;
-            //PosX = gameObject.transform.position.x;
-            //PosY = gameObject.transform.position.y;
-            //PosZ = gameObject.transform.position.z;
-            //Strength = 50.0f;
+        //ignore irrevelent colliders
+        if ((somethingInTouch && c.collider.gameObject != touchingObject) ||
+            (c.collider.tag != "Surface" && c.collider.tag != "Water" && c.collider.tag != "Sand" && c.collider.tag != "Pop")) return;
+
+        somethingInTouch = true;
+        touchingObject = c.collider.gameObject;
+
+        contactNormal = c.contacts[0].normal;
+        Debug.Log("OnCollisionEnter entered, filter passed and collision type is "+c.collider.tag);
+        origContactObjectPoint = gameObject.transform.position;
+        origContactPoint = c.contacts[0].point;
+
+        if (c.collider.tag == "Surface") flag = 1;
+        else if (c.collider.tag == "Water")
+        {
+            thisAudioSource.PlayOneShot(splash);
+            flag = 2;
         }
-        
-        //_feedback();
-        //SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
-        //SetServoPos(new double[3] {x,y,z}, 30.0f);
+        else if (c.collider.tag == "Sand") flag = 3;
+        else if (c.collider.tag == "PopEffect") flag = 4;
     }
 
     private void OnCollisionStay(Collision c)
     {
-       // Debug.Log("Within OnCollision, gameObject.position is " + gameObject.transform.position.ToString("G4"));
-        if(c.collider.tag == "Surface")
+        //Debug.Log("Tag is " + c.collider.tag + ", flag is " + flag);
+
+        //ignore irrevelent colliders
+        if ((somethingInTouch && c.collider.gameObject != touchingObject) || 
+            (c.collider.tag != "Surface" && c.collider.tag != "Water" && c.collider.tag != "Sand" && c.collider.tag != "Pop")) return;
+
+        //.Log("Tag is " + c.collider.tag + ", flag is " + flag);
+
+        // Debug.Log("Within OnCollision, gameObject.position is " + gameObject.transform.position.ToString("G4"));
+        Vector3 vecToOriginal = c.contacts[0].point - origContactObjectPoint;
+
+        float ang = Mathf.Deg2Rad * Vector3.Angle(vecToOriginal, contactNormal);
+        float scalarProj = vecToOriginal.magnitude * Mathf.Cos(ang);
+        Vector3 vectorProj = scalarProj * (contactNormal);
+
+        if (c.collider.tag == "Surface")
         {
             isBuildingInTouch = true;
             buildingInTouch = c.collider.gameObject;
-
-
-            Vector3 vecToOriginal = c.contacts[0].point - origContactObjectPoint;
-            //Debug.DrawLine(c.contacts[0].point, origContactPoint,Color.black);
-
-            float ang = Mathf.Deg2Rad * Vector3.Angle(vecToOriginal, contactNormal);
-            float scalarProj = vecToOriginal.magnitude * Mathf.Cos(ang);
-            Debug.Log("normal magnitude" + contactNormal.magnitude);
-            Vector3 vectorProj = scalarProj * (contactNormal);
-
-            Debug.DrawLine(c.contacts[0].point, c.contacts[0].point-vectorProj, Color.red);
-            Vector3 normalOutsidePos = c.contacts[0].point - vectorProj;
-            //Debug.Log("Oncollisionstay detected, strength is " + Strength + ", difference between object and goal is " + (normalOutsidePos - gameObject.transform.position).ToString("G4"));
-            //Debug.Log("goalPos is " + normalOutsidePos.ToString("G4") + ", and object pos is " + gameObject.transform.position.ToString("G4"));
-            guideObject.transform.position = normalOutsidePos;
-
-            PosX = normalOutsidePos.x;
-            PosY = normalOutsidePos.y;
-            PosZ = normalOutsidePos.z;
-            Strength = surfaceStrength;
-            float scale = vectorProj.sqrMagnitude;
-            Debug.Log("Amount of Strength is " + vectorProj.magnitude);
-            //SpeedX = -stiffness*vectorProj.x;
-            //SpeedY = -stiffness*vectorProj.y;
-            //SpeedZ = -stiffness*vectorProj.z;
+            surfaceHaptics(c, vectorProj);
         }
+        else if (c.collider.tag == "Water")
+        {
+            waterHaptics(c, vectorProj);
+        }
+        else if (c.collider.tag == "Sand")
+        {
+            sandHaptics(c, vectorProj);
+        }
+        else if (c.collider.tag == "PopEffect")
+        {
+            popHaptics(c, vectorProj);
+        }
+
+    }
+
+    void surfaceHaptics(Collision c, Vector3 vectorProj)
+    {
         
-        //SetServo(new double[3] { forceVector.x, forceVector.y, forceVector.z });
+        Vector3 normalOutsidePos = c.contacts[0].point - vectorProj;
+        PosX = normalOutsidePos.x;
+        PosY = normalOutsidePos.y;
+        PosZ = normalOutsidePos.z;
+        Strength = surfaceStrength;
+    }
+
+    void waterHaptics(Collision c, Vector3 vectorProj)
+    {
+        //vectorProj = vectorProj;
+        SpeedX = -viscocity * vectorProj.x;
+        SpeedY = -viscocity * vectorProj.y;
+        SpeedZ = -viscocity * vectorProj.z;
+    }
+
+    void sandHaptics(Collision c, Vector3 vectorProj)
+    {
+        Vector3 normalOutsidePos = (c.contacts[0].point - vectorProj).normalized;
+        float posrand = Random.value * 0.01f;
+
+        PosX = normalOutsidePos.x + posrand;
+        PosY = normalOutsidePos.y + posrand;
+        PosZ = normalOutsidePos.z + posrand;
+        Strength = surfaceStrength;
+    }
+
+    void popHaptics(Collision c, Vector3 vectorProj)
+    {
+        Vector3 vectorMoved = GetServoPos() - origContactObjectPoint;
+        float distanceMoved = vectorMoved.magnitude;
+        Debug.Log("Distance moved is" + distanceMoved);
+        if (distanceMoved < 0.5)
+        {
+            SpeedX = contactNormal.x * distanceMoved * 15;
+            SpeedY = contactNormal.y * distanceMoved * 15;
+            SpeedZ = contactNormal.z * distanceMoved * 15;
+            c.collider.transform.position = GetServoPos();
+        }
+        else if (distanceMoved < 1)
+        {
+            SpeedX = 0;
+            SpeedY = 0;
+            SpeedZ = 0;
+            c.collider.transform.position = GetServoPos();
+        }    
+    }
+
+    void resetHapticParams()
+    {
+        Debug.Log("Resetting values.");
+        SpeedX = 0.0f;
+        SpeedY = 0.0f;
+        SpeedZ = 0.0f;
+        Strength = 0.0f;
+        PosX = 0.0f;
+        PosY = 0.0f;
+        PosZ = 0.0f;
+        flag = 0;
     }
 
     private void OnCollisionExit(Collision c)
     {
+        Debug.Log("OnCollisionExit exiting, before filter and collision type is " + c.collider.tag + "and object name is " + c.collider.gameObject.name);
+
+        //ignore irrevelent colliders
+        if ((somethingInTouch && c.collider.gameObject != touchingObject) ||
+            c.collider.tag != "Surface" && c.collider.tag != "Water" && c.collider.tag != "Sand" && c.collider.tag != "Pop") return;
+
+        Debug.Log("OnCollisionExit exiting, filter passed and collision type is " + c.collider.tag + "and object name is " + c.collider.gameObject.name);
+
+        if(c.collider.gameObject == touchingObject)
+        {
+            somethingInTouch = false; //only allow one collision at once
+            touchingObject = null;
+        }
+
         if(c.collider.tag == "Surface")
         {
-            //Reset everything
-            SpeedX = 0.0f;
-            SpeedY = 0.0f;
-            SpeedZ = 0.0f;
-            Strength = 0.0f;
+            isBuildingInTouch = false;
+            buildingInTouch = null;
         }
+
+
+
+        //Reset everything
+        resetHapticParams();
         
     }
 
@@ -271,12 +375,13 @@ public class DeviceNovintFalcon : MonoBehaviour {
     #region ForceUpdate
 
 	private void _feedback() {
-		// NovintFalconのグリップをデフォ位置に戻す
-		//SetServo(new double[3] { SpeedX, SpeedY, -SpeedZ });
-        //Debug.Log("Position being fed to setservopos as " + PosX + ", " + PosY + ", " + PosZ);		
-        SetServoPos(new double[3] { PosX, PosY, -PosZ }, Strength);
-        //SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
-		//Debug.Log(GetServoPos());
+
+        if (flag == 1) SetServoPos(new double[3] { PosX, PosY, -PosZ }, Strength);
+        else if (flag == 2) SetServo(new double[3] { SpeedX, SpeedY, -SpeedZ });
+        else if (flag == 3) SetServoPos(new double[3] { PosX, PosY, -PosZ }, Strength);
+        else if (flag == 4) SetServo(new double[3] { SpeedX, SpeedY, -SpeedZ });
+        else if (flag == 0) SetServo(new double[3] { 0.0f, 0.0f, 0.0f });
+
 	}
 
 	private void _charaMove() {
