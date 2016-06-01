@@ -95,6 +95,16 @@ public class DeviceNovintFalcon : MonoBehaviour {
     //marker to see where force is being guided towards
     public GameObject guideObject;
 
+    //to grab buildings
+    bool isBuildingInTouch;
+    GameObject buildingInTouch;
+    bool isGrabbingBuilding;
+    GameObject grabbedBuilding;
+
+    public GameObject flame;
+    public AudioSource screaming;
+    bool isPeaceful = true;
+
 	#endregion
      
 	//-------------------------------------------------
@@ -132,7 +142,46 @@ public class DeviceNovintFalcon : MonoBehaviour {
 		gameObject.transform.position = (new Vector3((float)GetXPos(), (float)GetYPos(), -(float)GetZPos()));
         //Debug.Log("Position just set to " + gameObject.transform.position.ToString("G4"));
 		//Debug.Log(isButton0Down() + " , " + isButton1Down() + " , " + isButton2Down() + " , " + isButton3Down());
-	}
+
+        //hand tries to grab
+        MainButtonControl();
+    
+    }
+
+    #region Button
+    void MainButtonControl()
+    {
+        if(isButton0Down())
+        {
+            if (isPeaceful)
+            {
+                isPeaceful = false;
+                screaming.Play();
+            }
+
+            //If button is pressed but I'm not grabbing a building that I'm touching
+            if (isBuildingInTouch && grabbedBuilding != buildingInTouch) 
+            { //then grab it! 
+                isGrabbingBuilding = true;
+                grabbedBuilding = buildingInTouch;
+                grabbedBuilding.transform.parent = gameObject.transform;
+                GameObject.Instantiate(flame,grabbedBuilding.transform.position, new Quaternion()); //create flame!!
+                grabbedBuilding.transform.localPosition = new Vector3(grabbedBuilding.transform.localScale.x / 2, +grabbedBuilding.transform.localScale.y / 2, grabbedBuilding.transform.localScale.z / 2);
+                grabbedBuilding.GetComponent<BuildingScript>().getsGrabbed();
+            }
+        }
+        else
+        {
+            if(grabbedBuilding != null) //button released but there still is a grabbed building.
+            {
+                grabbedBuilding.transform.parent = null;
+
+            }
+        }
+        
+    }
+    #endregion
+
 
     #region Collision
     private void OnCollisionEnter(Collision c)
@@ -171,6 +220,10 @@ public class DeviceNovintFalcon : MonoBehaviour {
        // Debug.Log("Within OnCollision, gameObject.position is " + gameObject.transform.position.ToString("G4"));
         if(c.collider.tag == "Surface")
         {
+            isBuildingInTouch = true;
+            buildingInTouch = c.collider.gameObject;
+
+
             Vector3 vecToOriginal = c.contacts[0].point - origContactObjectPoint;
             //Debug.DrawLine(c.contacts[0].point, origContactPoint,Color.black);
 
