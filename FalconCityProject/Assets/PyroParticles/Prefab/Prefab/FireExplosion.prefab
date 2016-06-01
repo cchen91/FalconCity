@@ -245,18 +245,10 @@ MonoBehaviour:
   StartTime: 0.25
   StopTime: 0.5
   Duration: 0.35
-  ForceAmount: 2500
+  ForceAmount: 500
   ForceRadius: 10
   IsProjectile: 0
   ManualParticleSystems: []
-  startTimeMultiplier: 0
-  startTimeIncrement: 0
-  stopTimeMultiplier: 0
-  stopTimeIncrement: 0
-  <Starting>k__BackingField: 0
-  <StartPercent>k__BackingField: 0
-  <Stopping>k__BackingField: 0
-  <StopPercent>k__BackingField: 0
 --- !u!114 &11450062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,11 +265,6 @@ MonoBehaviour:
   IntensityMaxRange:
     Minimum: 0
     Maximum: 8
-  firePointLight: {fileID: 0}
-  lightIntensity: 0
-  seed: 0
-  fireBaseScript: {fileID: 0}
-  baseY: 0
 --- !u!198 &19834194
 ParticleSystem:
   m_ObjectHideFlags: 1

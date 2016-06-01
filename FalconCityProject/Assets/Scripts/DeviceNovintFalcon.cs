@@ -74,7 +74,6 @@ public class DeviceNovintFalcon : MonoBehaviour {
     Vector3 contactNormal = Vector3.zero;
 
     //for each texture
-    float stiffness = 50.0f;
     float surfaceStrength = 50.0f;
     float viscocity = 7.0f;
     int flag = 0; //1: surface, 2: water, 3: sand, 4: pop
@@ -83,6 +82,8 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
     //marker to see where force is being guided towards
     public GameObject guideObject;
+    public GameObject rockpile;
+    float lastRockpileUpdateTime;
 
     //to grab buildings
     bool isBuildingInTouch;
@@ -146,15 +147,6 @@ public class DeviceNovintFalcon : MonoBehaviour {
     
     }
 
-    void CopyColliderProperties(BoxCollider collider, GameObject building)
-    {
-        Debug.Log("This building is " + building.name);
-        Debug.Log("and collider is " + building.GetComponent<BoxCollider>().name);
-        BoxCollider bCollider = building.GetComponent<BoxCollider>();
-        collider.center = bCollider.bounds.center;
-        collider.size = bCollider.bounds.size;
-    }
-
     #region Button
     void MainButtonControl()
     {
@@ -178,13 +170,17 @@ public class DeviceNovintFalcon : MonoBehaviour {
                 grabbedBuilding.transform.parent = gameObject.transform;
 
                 //copy collider
-                CopyColliderProperties(grabbedBuildingCollider, grabbedBuilding); 
-                grabbedBuildingCollider.enabled = true;
+                //CopyColliderProperties(grabbedBuildingCollider, grabbedBuilding); 
+                //grabbedBuildingCollider.enabled = true;
+
+                //reset touching seting
+                somethingInTouch = false;
 
                 ///gameObject.AddComponent(grabbedBuilding.GetComponent<Collider>());
 
                 //elements of destruction
-                GameObject.Instantiate(explosion,grabbedBuilding.transform.position, new Quaternion()); //create flame!!
+                if(grabbedBuilding.GetComponent<BuildingScript>().destroyed == false)
+                    GameObject.Instantiate(explosion,grabbedBuilding.transform.position, new Quaternion()); //BAM!! But only once
                 GameObject.Instantiate(fire, grabbedBuilding.transform.position, new Quaternion()); //create flame!!
 
                 
@@ -199,7 +195,7 @@ public class DeviceNovintFalcon : MonoBehaviour {
                 isGrabbingBuilding = false;
              
                 grabbedBuilding.transform.parent = null;
-                grabbedBuildingCollider.enabled = false;
+                //grabbedBuildingCollider.enabled = false;
                 gameObject.GetComponent<SphereCollider>().enabled = true;
                 grabbedBuilding.GetComponent<BuildingScript>().letGo();
 
@@ -211,21 +207,22 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
 
     #region Collision
-    private void OnCollisionEnter(Collision c)
+    public void OnCollisionEnter(Collision c)
     {
-        Debug.Log("Detecting Collidions.");
 
-        Debug.Log("OnCollisionEnter entered, before filter and collision type is " + c.collider.tag + "and object name is " + c.collider.gameObject.name);
+        Debug.Log("SomethinginTouch is " + somethingInTouch + " and touchingobject currently is " + touchingObject);
 
         //ignore irrevelent colliders
         if ((somethingInTouch && c.collider.gameObject != touchingObject) ||
             (c.collider.tag != "Surface" && c.collider.tag != "Water" && c.collider.tag != "Sand" && c.collider.tag != "Pop")) return;
 
+        Debug.Log("OnCollisionEnter entered, after filter and collision type is " + c.collider.tag + "and object name is " + c.collider.gameObject.name);
+
+
         somethingInTouch = true;
         touchingObject = c.collider.gameObject;
 
         contactNormal = c.contacts[0].normal;
-        Debug.Log("OnCollisionEnter entered, filter passed and collision type is "+c.collider.tag);
         origContactObjectPoint = gameObject.transform.position;
         origContactPoint = c.contacts[0].point;
 
@@ -239,7 +236,7 @@ public class DeviceNovintFalcon : MonoBehaviour {
         else if (c.collider.tag == "PopEffect") flag = 4;
     }
 
-    private void OnCollisionStay(Collision c)
+    public void OnCollisionStay(Collision c)
     {
         //Debug.Log("Tag is " + c.collider.tag + ", flag is " + flag);
 
@@ -247,9 +244,9 @@ public class DeviceNovintFalcon : MonoBehaviour {
         if ((somethingInTouch && c.collider.gameObject != touchingObject) || 
             (c.collider.tag != "Surface" && c.collider.tag != "Water" && c.collider.tag != "Sand" && c.collider.tag != "Pop")) return;
 
-        //.Log("Tag is " + c.collider.tag + ", flag is " + flag);
+        Debug.Log("OnCollisionStay running. Tag is " + c.collider.tag + ", flag is " + flag);
 
-        // Debug.Log("Within OnCollision, gameObject.position is " + gameObject.transform.position.ToString("G4"));
+        //Debug.Log("Within OnCollision, gameObject.position is " + gameObject.transform.position.ToString("G4"));
         Vector3 vecToOriginal = c.contacts[0].point - origContactObjectPoint;
 
         float ang = Mathf.Deg2Rad * Vector3.Angle(vecToOriginal, contactNormal);
@@ -279,7 +276,8 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
     void surfaceHaptics(Collision c, Vector3 vectorProj)
     {
-        
+       // Debug.Log("Surface object in contact is " + c.gameObject.name);
+        float stiffnesss = c.gameObject.GetComponent<BuildingScript>().stiffness;
         Vector3 normalOutsidePos = c.contacts[0].point - vectorProj;
         PosX = normalOutsidePos.x;
         PosY = normalOutsidePos.y;
@@ -297,12 +295,20 @@ public class DeviceNovintFalcon : MonoBehaviour {
 
     void sandHaptics(Collision c, Vector3 vectorProj)
     {
-        Vector3 normalOutsidePos = (c.contacts[0].point - vectorProj).normalized;
-        float posrand = Random.value * 0.01f;
+        float posrand = Random.value * 0.001f;
+        Vector3 basePoint = gameObject.transform.position;
 
-        PosX = normalOutsidePos.x + posrand;
-        PosY = normalOutsidePos.y + posrand;
-        PosZ = normalOutsidePos.z + posrand;
+        if(Time.time > lastRockpileUpdateTime + 0.5)
+        {
+            GameObject.Instantiate(rockpile,
+              new Vector3(basePoint.x, basePoint.y - 0.1f, basePoint.z), new Quaternion());
+            lastRockpileUpdateTime = Time.time;
+        }
+           
+
+        PosX = basePoint.x + posrand;
+        PosY = basePoint.y + posrand;
+        PosZ = basePoint.z + posrand;
         Strength = surfaceStrength;
     }
 
@@ -310,7 +316,7 @@ public class DeviceNovintFalcon : MonoBehaviour {
     {
         Vector3 vectorMoved = GetServoPos() - origContactObjectPoint;
         float distanceMoved = vectorMoved.magnitude;
-        Debug.Log("Distance moved is" + distanceMoved);
+        //Debug.Log("Distance moved is" + distanceMoved);
         if (distanceMoved < 0.5)
         {
             SpeedX = contactNormal.x * distanceMoved * 15;
@@ -340,15 +346,15 @@ public class DeviceNovintFalcon : MonoBehaviour {
         flag = 0;
     }
 
-    private void OnCollisionExit(Collision c)
+    public void OnCollisionExit(Collision c)
     {
-        Debug.Log("OnCollisionExit exiting, before filter and collision type is " + c.collider.tag + "and object name is " + c.collider.gameObject.name);
+        //Debug.Log("OnCollisionExit exiting, before filter and collision type is " + c.collider.tag + "and object name is " + c.collider.gameObject.name);
 
         //ignore irrevelent colliders
         if ((somethingInTouch && c.collider.gameObject != touchingObject) ||
             c.collider.tag != "Surface" && c.collider.tag != "Water" && c.collider.tag != "Sand" && c.collider.tag != "Pop") return;
 
-        Debug.Log("OnCollisionExit exiting, filter passed and collision type is " + c.collider.tag + "and object name is " + c.collider.gameObject.name);
+        //Debug.Log("OnCollisionExit exiting, filter passed and collision type is " + c.collider.tag + "and object name is " + c.collider.gameObject.name);
 
         if(c.collider.gameObject == touchingObject)
         {
